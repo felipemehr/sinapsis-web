@@ -4,212 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad — Sinapsis SpA</title>
-    <meta name="description" content="Política de Privacidad de Sinapsis SpA y sus servicios, incluyendo QueBot.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <meta name="description" content="Política de Privacidad de Sinapsis SpA: qué datos tratamos, con qué finalidades, cómo los protegemos y cómo ejercer tus derechos.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://sinapsis.in/privacy">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --bg-primary: #0B0F19;
-            --bg-secondary: #111827;
-            --bg-card: #1A2035;
-            --text-primary: #F1F5F9;
-            --text-secondary: #94A3B8;
-            --text-muted: #64748B;
-            --accent-purple: #818CF8;
-            --accent-teal: #2DD4BF;
-            --border-subtle: rgba(148, 163, 184, 0.08);
-        }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.8;
-        }
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 0 2rem; height: 64px;
-            display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(24px); background: rgba(11, 15, 25, 0.85);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .nav-brand {
-            font-weight: 900; font-size: 1.2rem; letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF, #F472B6);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent; text-decoration: none;
-        }
-        .nav-back {
-            color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
-            font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.2s;
-        }
-        .nav-back:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
-        .content {
-            max-width: 780px; margin: 0 auto;
-            padding: 7rem 2rem 4rem;
-        }
-        h1 {
-            font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .last-updated { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
-        h2 {
-            font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem;
-            color: var(--accent-purple);
-        }
-        h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
-        p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; }
-        ul, ol {
-            color: var(--text-secondary); margin: 0.5rem 0 1.5rem 1.5rem;
-            font-size: 0.95rem;
-        }
-        li { margin-bottom: 0.4rem; }
-        a { color: var(--accent-teal); }
-        footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 2rem; text-align: center;
-        }
-        footer p { color: var(--text-muted); font-size: 0.8rem; }
-        footer a { color: var(--text-secondary); text-decoration: none; }
-        @media (max-width: 768px) {
-            .content { padding: 6rem 1.25rem 3rem; }
-            h1 { font-size: 1.8rem; }
-        }
-
-        /* ═══════════════════ LANG SWITCH ═══════════════════ */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .lang-switch {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-        }
-        .lang-switch a {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lang-switch a:hover {
-            color: var(--text-secondary);
-            background: rgba(255,255,255,0.06);
-        }
-        .lang-switch .lang-active {
-            color: var(--text-primary);
-            font-weight: 700;
-            padding: 0.2rem 0.4rem;
-        }
-        .lang-switch .lang-sep {
-            color: var(--text-muted);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <nav>
-        <a href="/" class="nav-brand">SINAPSIS</a>
-        <div class="nav-right">
-            <a href="/" class="nav-back">← Volver al inicio</a>
-            <a href="https://www.humanos.eco" target="_blank" class="nav-back">HumanOS ↗</a>
-            <span class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/privacy">EN</a></span>
-        </div>
+    <nav class="site-nav" aria-label="Navegación">
+        <a href="/" class="nav-brand" aria-label="Sinapsis — inicio">
+            <img src="/assets/img/logo-sinapsis.png" alt="Sinapsis" width="760" height="240">
+        </a>
+        <ul class="nav-links" style="display:flex;">
+            <li><a href="/">← Volver al inicio</a></li>
+            <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/privacy">EN</a></li>
+        </ul>
     </nav>
 
-    <div class="content">
+    <main class="legal-content">
         <h1>Política de Privacidad</h1>
-        <p class="last-updated">Última actualización: 6 de marzo de 2025</p>
+        <p class="last-updated">Última actualización: 5 de julio de 2026</p>
 
-        <p>Sinapsis SpA ("nosotros", "nuestro") opera el sitio web sinapsis.in y el servicio QueBot (en conjunto, los "Servicios"). Esta política describe cómo recopilamos, usamos y protegemos su información personal.</p>
+        <div class="legal-notice">
+            Este documento es una versión corporativa inicial y debe ser revisado por asesoría
+            legal antes de considerarse definitivo.
+        </div>
 
-        <h2>1. Información que recopilamos</h2>
-        <h3>Información proporcionada por usted</h3>
+        <p>Sinapsis SpA ("Sinapsis", "nosotros") opera el sitio web sinapsis.in y servicios asociados,
+        incluyendo la plataforma HumanOS y el asistente especializado QueBot (en conjunto, los
+        "Servicios"). Esta política describe cómo recopilamos, usamos y protegemos tu información
+        personal, tomando como referencia la Ley N° 21.719 de Protección de Datos Personales de Chile.</p>
+
+        <h2>1. Identidad del responsable</h2>
         <ul>
-            <li><strong>Datos de cuenta:</strong> Nombre, dirección de correo electrónico al registrarse o iniciar sesión mediante Google OAuth.</li>
-            <li><strong>Consultas:</strong> Preguntas y mensajes que envía a través de QueBot.</li>
+            <li><strong>Responsable:</strong> Sinapsis SpA — [Completar razón social completa / RUT]</li>
+            <li><strong>Domicilio:</strong> Santiago, Chile — [Completar domicilio legal]</li>
+            <li><strong>Contacto de privacidad:</strong> <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> [Confirmar casilla dedicada de privacidad]</li>
+        </ul>
+
+        <h2>2. Información que recopilamos</h2>
+        <h3>Información proporcionada por ti</h3>
+        <ul>
+            <li><strong>Datos de cuenta:</strong> nombre y dirección de correo electrónico al registrarte o iniciar sesión, incluyendo autenticación mediante Google OAuth.</li>
+            <li><strong>Consultas y contenidos:</strong> preguntas, mensajes y documentos que envías a través de los Servicios (por ejemplo, consultas a asistentes como QueBot).</li>
+            <li><strong>Comunicaciones:</strong> correos o mensajes que nos envías directamente.</li>
         </ul>
 
         <h3>Información obtenida de terceros</h3>
         <ul>
-            <li><strong>Google OAuth:</strong> Si autoriza la conexión con Google, accedemos a su dirección de correo electrónico y datos básicos del perfil para autenticación. Si autoriza acceso al calendario, accedemos a eventos de Google Calendar únicamente para las funciones de agenda dentro de QueBot.</li>
+            <li><strong>Google OAuth:</strong> si autorizas la conexión con Google, accedemos a tu dirección de correo electrónico y datos básicos del perfil para autenticación. Si autorizas acceso al calendario, accedemos a eventos de Google Calendar únicamente para las funciones de agenda dentro de los Servicios.</li>
         </ul>
 
         <h3>Información recopilada automáticamente</h3>
         <ul>
             <li>Datos de uso del servicio (consultas realizadas, funcionalidades utilizadas).</li>
-            <li>Información técnica básica (tipo de navegador, dirección IP).</li>
+            <li>Información técnica básica (tipo de navegador, dirección IP, registros de acceso).</li>
         </ul>
 
-        <h2>2. Cómo usamos su información</h2>
+        <h2>3. Finalidades del tratamiento</h2>
         <ul>
             <li>Proveer, mantener y mejorar los Servicios.</li>
-            <li>Procesar sus consultas legales y generar respuestas mediante IA.</li>
-            <li>Gestionar la integración con Google Calendar (si es autorizada).</li>
-            <li>Comunicarnos con usted sobre el servicio.</li>
+            <li>Procesar tus consultas y generar respuestas mediante sistemas de IA con supervisión humana.</li>
+            <li>Gestionar integraciones autorizadas por ti (por ejemplo, Google Calendar).</li>
+            <li>Comunicarnos contigo sobre el servicio.</li>
+            <li>Velar por la seguridad de los Servicios y prevenir usos abusivos.</li>
             <li>Cumplir con obligaciones legales.</li>
         </ul>
 
-        <h2>3. Uso de datos de Google</h2>
-        <p>Nuestra aplicación cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Política de Datos de Usuario de Google API Services</a>, incluyendo los requisitos de Uso Limitado:</p>
+        <h2>4. Base de licitud</h2>
+        <p>Tratamos datos personales sobre la base de: (a) la ejecución del servicio que solicitas o del
+        contrato correspondiente; (b) tu consentimiento, cuando corresponda (por ejemplo, integraciones
+        opcionales que autorizas expresamente); (c) el cumplimiento de obligaciones legales; y
+        (d) intereses legítimos compatibles con tus derechos, como la seguridad de los Servicios.
+        Puedes retirar tu consentimiento en cualquier momento sin afectar la licitud del tratamiento previo.</p>
+
+        <h2>5. Uso de datos de Google</h2>
+        <p>Nuestra aplicación cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de Google API Services</a>, incluyendo los requisitos de Uso Limitado:</p>
         <ul>
-            <li>Solo accedemos a los datos de Google necesarios para las funcionalidades que usted autoriza.</li>
+            <li>Solo accedemos a los datos de Google necesarios para las funcionalidades que tú autorizas.</li>
             <li>No vendemos datos obtenidos de Google a terceros.</li>
             <li>No usamos datos de Google para publicidad.</li>
-            <li>No permitimos que personas lean sus datos, excepto con su consentimiento expreso, por razones de seguridad, para cumplir leyes aplicables, o para operaciones internas agregadas y anonimizadas.</li>
-            <li>Puede revocar el acceso a su cuenta de Google en cualquier momento desde <a href="https://myaccount.google.com/permissions" target="_blank">la configuración de su cuenta de Google</a>.</li>
+            <li>No permitimos que personas lean tus datos, excepto con tu consentimiento expreso, por razones de seguridad, para cumplir leyes aplicables, o para operaciones internas agregadas y anonimizadas.</li>
+            <li>Puedes revocar el acceso a tu cuenta de Google en cualquier momento desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">la configuración de tu cuenta de Google</a>.</li>
         </ul>
 
-        <h2>4. Compartir información</h2>
-        <p>No vendemos, comercializamos ni transferimos su información personal a terceros, excepto:</p>
+        <h2>6. Encargados y proveedores</h2>
+        <p>No vendemos ni comercializamos tu información personal. Compartimos datos únicamente con
+        proveedores que nos prestan servicios y que los tratan por cuenta nuestra, bajo obligaciones
+        de confidencialidad y seguridad:</p>
         <ul>
-            <li><strong>Proveedores de servicio:</strong> Utilizamos servicios de IA (como Anthropic/Claude) para procesar consultas. Estos proveedores procesan datos bajo sus propias políticas de privacidad y no retienen sus datos para entrenar modelos.</li>
-            <li><strong>Obligación legal:</strong> Si es requerido por ley o proceso judicial.</li>
+            <li><strong>Proveedores de IA:</strong> utilizamos servicios de modelos de lenguaje (como Anthropic/Claude) para procesar consultas. Estos proveedores procesan datos bajo sus propias políticas de privacidad y no retienen tus datos para entrenar modelos.</li>
+            <li><strong>Infraestructura y hosting:</strong> proveedores de nube donde se alojan los Servicios.</li>
+            <li><strong>Obligación legal:</strong> podremos divulgar información si es requerido por ley o por orden de autoridad competente.</li>
         </ul>
 
-        <h2>5. Seguridad de datos</h2>
+        <h2>7. Transferencias internacionales</h2>
+        <p>Algunos de nuestros proveedores (infraestructura de nube, servicios de IA) procesan datos
+        fuera de Chile. Cuando esto ocurre, procuramos que existan garantías adecuadas de protección,
+        como cláusulas contractuales y estándares de seguridad equivalentes a los descritos en esta política.</p>
+
+        <h2>8. Conservación</h2>
+        <p>Conservamos tu información mientras tu cuenta esté activa o mientras sea necesario para
+        proveer los Servicios, cumplir obligaciones legales o resolver disputas. Puedes solicitar la
+        eliminación de tus datos en cualquier momento a través del canal de contacto indicado.</p>
+
+        <h2>9. Tus derechos</h2>
+        <p>De acuerdo con la legislación chilena de protección de datos, tienes derecho a:</p>
+        <ul>
+            <li><strong>Acceso:</strong> conocer los datos que tratamos sobre ti y obtener una copia.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+            <li><strong>Supresión (cancelación):</strong> solicitar la eliminación de tus datos.</li>
+            <li><strong>Oposición:</strong> oponerte a determinados tratamientos.</li>
+            <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado de uso común.</li>
+            <li><strong>Revocación:</strong> retirar consentimientos otorgados, incluyendo permisos de Google OAuth.</li>
+        </ul>
+        <p>Para ejercer estos derechos, escríbenos a
+        <a href="mailto:admin@sinapsis.in?subject=Ejercicio%20de%20derechos%20-%20Datos%20personales">admin@sinapsis.in</a>
+        indicando el derecho que deseas ejercer. Responderemos dentro de los plazos legales. Más detalle
+        en nuestra <a href="/datos-personales">Política de Tratamiento de Datos Personales</a>.</p>
+
+        <h2>10. Seguridad</h2>
         <ul>
             <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
             <li>Acceso restringido a datos bajo principio de mínimo privilegio.</li>
             <li>Almacenamiento seguro de credenciales y tokens.</li>
             <li>Revisión periódica de medidas de seguridad.</li>
         </ul>
+        <p>Ver también nuestra <a href="/seguridad">Política de Seguridad de la Información</a>.</p>
 
-        <h2>6. Retención de datos</h2>
-        <p>Retenemos su información mientras su cuenta esté activa o según sea necesario para proveer los Servicios. Puede solicitar la eliminación de sus datos en cualquier momento.</p>
+        <h2>11. Cambios a esta política</h2>
+        <p>Podemos actualizar esta política periódicamente. Publicaremos cualquier cambio en esta
+        página con una nueva fecha de actualización.</p>
 
-        <h2>7. Sus derechos</h2>
-        <p>Usted tiene derecho a:</p>
-        <ul>
-            <li><strong>Acceso:</strong> Solicitar una copia de sus datos personales.</li>
-            <li><strong>Rectificación:</strong> Corregir datos inexactos.</li>
-            <li><strong>Eliminación:</strong> Solicitar la eliminación de sus datos.</li>
-            <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado.</li>
-            <li><strong>Revocación:</strong> Revocar permisos otorgados a través de Google OAuth.</li>
-        </ul>
-
-        <h2>8. Cambios a esta política</h2>
-        <p>Podemos actualizar esta política periódicamente. Publicaremos cualquier cambio en esta página con una nueva fecha de actualización.</p>
-
-        <h2>9. Contacto</h2>
-        <p>Para preguntas sobre esta política o para ejercer sus derechos:</p>
+        <h2>12. Contacto</h2>
         <ul>
             <li><strong>Email:</strong> <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></li>
             <li><strong>Empresa:</strong> Sinapsis SpA, Santiago, Chile</li>
         </ul>
-    </div>
 
-    <footer>
-        <p>© 2025 Sinapsis SpA · <a href="/">Inicio</a> · <a href="/terms">Términos de Servicio</a> · <a href="https://www.humanos.eco" target="_blank">HumanOS</a></p>
+        <nav class="legal-footer-nav" aria-label="Documentos legales">
+            <a href="/privacy">Privacidad</a>
+            <a href="/datos-personales">Datos Personales</a>
+            <a href="/cookies">Cookies</a>
+            <a href="/terms">Términos</a>
+            <a href="/seguridad">Seguridad</a>
+            <a href="/ia-responsable">IA Responsable</a>
+            <a href="/cumplimiento">Cumplimiento</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer" style="padding: 2rem;">
+        <div class="footer-bottom" style="margin-top: 0; padding-top: 0; border-top: none;">
+            <p>© 2026 Sinapsis SpA · Santiago, Chile</p>
+            <p><a href="/">Inicio</a> · <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
+        </div>
     </footer>
 </body>
 </html>

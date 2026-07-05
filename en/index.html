@@ -3,1232 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinapsis SpA — Applied Intelligence with Purpose</title>
-    <meta name="description" content="We connect data, artificial intelligence, and automation to transform complex information into clear, responsible, and actionable decisions.">
-    <meta name="theme-color" content="#0B0F19">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <title>Sinapsis — Consulting, Technology & Innovation | Hybrid Work Systems</title>
+    <meta name="description" content="Chilean consulting, technology and innovation firm. We design hybrid work systems: people, processes, data, automation and AI working together to improve decisions, efficiency and execution. Meet HumanOS.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="canonical" href="https://sinapsis.in/en/">
+    <link rel="alternate" hreflang="es" href="https://sinapsis.in/">
+    <link rel="alternate" hreflang="en" href="https://sinapsis.in/en/">
+    <link rel="alternate" hreflang="x-default" href="https://sinapsis.in/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sinapsis SpA">
+    <meta property="og:title" content="Sinapsis — We design hybrid work systems">
+    <meta property="og:description" content="Consulting, technology and innovation from Chile: people, processes, data, automation and AI working together to improve decisions, efficiency and execution.">
+    <meta property="og:url" content="https://sinapsis.in/en/">
+    <meta property="og:image" content="https://sinapsis.in/assets/img/og-image.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --bg-primary: #0B0F19;
-            --bg-secondary: #111827;
-            --bg-card: #1A2035;
-            --bg-card-hover: #1F2847;
-            --text-primary: #F1F5F9;
-            --text-secondary: #94A3B8;
-            --text-muted: #64748B;
-            --accent-purple: #818CF8;
-            --accent-teal: #2DD4BF;
-            --accent-pink: #F472B6;
-            --accent-orange: #FB923C;
-            --accent-blue: #38BDF8;
-            --border-subtle: rgba(148, 163, 184, 0.08);
-            --border-glow: rgba(129, 140, 248, 0.2);
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* ═══════════════════ NAVIGATION ═══════════════════ */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 0 2rem;
-            height: 64px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            background: rgba(11, 15, 25, 0.85);
-            border-bottom: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
-        }
-
-        .nav-brand {
-            font-weight: 900;
-            font-size: 1.2rem;
-            letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF, #F472B6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
-
-        .nav-cta {
-            background: var(--accent-purple) !important;
-            color: white !important;
-            font-weight: 600 !important;
-            padding: 0.5rem 1.2rem !important;
-        }
-
-        .nav-cta:hover { background: #6366F1 !important; transform: translateY(-1px); }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 8px;
-        }
-
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-secondary);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        /* ═══════════════════ HERO ═══════════════════ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 60%, rgba(45, 212, 191, 0.06) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 80%, rgba(244, 114, 182, 0.04) 0%, transparent 50%);
-            animation: nebula 20s ease-in-out infinite alternate;
-        }
-
-        @keyframes nebula {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-2%, -1%) rotate(3deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            letter-spacing: 0.02em;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-        }
-
-        .brand-gradient {
-            background: linear-gradient(135deg, #818CF8 0%, #2DD4BF 30%, #F472B6 60%, #FB923C 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient-shift 8s ease-in-out infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-spa {
-            color: var(--text-primary);
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1rem, 2.5vw, 1.35rem);
-            color: var(--text-secondary);
-            margin: 1.5rem auto 2.5rem;
-            max-width: 600px;
-            font-weight: 400;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 2rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #818CF8, #6366F1);
-            color: white;
-            box-shadow: 0 4px 24px rgba(129, 140, 248, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(129, 140, 248, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-glow);
-        }
-
-        .btn-outline:hover {
-            background: rgba(129, 140, 248, 0.08);
-            border-color: var(--accent-purple);
-            transform: translateY(-2px);
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
-        }
-
-        .hero-scroll svg { width: 24px; height: 24px; color: var(--text-muted); }
-
-        /* ═══════════════════ SECTIONS ═══════════════════ */
-        section {
-            padding: 6rem 2rem;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent-purple);
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .section-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            line-height: 1.8;
-        }
-
-        /* ═══════════════════ PILLARS ═══════════════════ */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .pillar-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pillar-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            border-radius: 16px 16px 0 0;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .pillar-card:nth-child(1)::before { background: linear-gradient(90deg, #818CF8, #6366F1); }
-        .pillar-card:nth-child(2)::before { background: linear-gradient(90deg, #2DD4BF, #14B8A6); }
-        .pillar-card:nth-child(3)::before { background: linear-gradient(90deg, #F472B6, #EC4899); }
-
-        .pillar-card:hover {
-            border-color: var(--border-glow);
-            transform: translateY(-4px);
-            background: var(--bg-card-hover);
-        }
-
-        .pillar-card:hover::before { opacity: 1; }
-
-        .pillar-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .pillar-card:nth-child(1) .pillar-icon { background: rgba(129, 140, 248, 0.12); }
-        .pillar-card:nth-child(2) .pillar-icon { background: rgba(45, 212, 191, 0.12); }
-        .pillar-card:nth-child(3) .pillar-icon { background: rgba(244, 114, 182, 0.12); }
-
-        .pillar-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .pillar-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* ═══════════════════ QUEBOT ═══════════════════ */
-        .quebot-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .quebot-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .quebot-visual {
-            position: relative;
-            background: linear-gradient(135deg, rgba(129, 140, 248, 0.06), rgba(45, 212, 191, 0.06));
-            border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 340px;
-        }
-
-        .quebot-globe {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 60px rgba(129, 140, 248, 0.3), 0 0 120px rgba(45, 212, 191, 0.15);
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 60px rgba(129, 140, 248, 0.3), 0 0 120px rgba(45, 212, 191, 0.15); }
-            50% { box-shadow: 0 0 80px rgba(129, 140, 248, 0.4), 0 0 160px rgba(45, 212, 191, 0.2); }
-        }
-
-        .quebot-label {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .quebot-sublabel {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
-        }
-
-        .quebot-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .quebot-info p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .quebot-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .quebot-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .quebot-features li::before {
-            content: '✓';
-            color: var(--accent-teal);
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .btn-quebot {
-            background: linear-gradient(135deg, #2DD4BF, #14B8A6);
-            color: #0B0F19;
-            font-weight: 700;
-            box-shadow: 0 4px 24px rgba(45, 212, 191, 0.3);
-        }
-
-        .btn-quebot:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(45, 212, 191, 0.4);
-        }
-
-
-        /* ═══════════════════ HUMANOS ═══════════════════ */
-        .humanos-section {
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .humanos-section .section-label {
-            color: var(--accent-teal);
-        }
-
-        .humanos-visual {
-            position: relative;
-            background: linear-gradient(135deg, rgba(45, 212, 191, 0.06), rgba(20, 184, 166, 0.06));
-            border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 340px;
-        }
-
-        .humanos-globe {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2DD4BF, #14B8A6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 60px rgba(45, 212, 191, 0.3), 0 0 120px rgba(20, 184, 166, 0.15);
-            animation: pulse-glow-teal 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow-teal {
-            0%, 100% { box-shadow: 0 0 60px rgba(45, 212, 191, 0.3), 0 0 120px rgba(20, 184, 166, 0.15); }
-            50% { box-shadow: 0 0 80px rgba(45, 212, 191, 0.4), 0 0 160px rgba(20, 184, 166, 0.2); }
-        }
-
-        .humanos-label {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #2DD4BF, #14B8A6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .humanos-sublabel {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
-        }
-
-        .humanos-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .humanos-info p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .humanos-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .humanos-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .humanos-features li::before {
-            content: '✓';
-            color: var(--accent-teal);
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .btn-humanos {
-            background: linear-gradient(135deg, #2DD4BF, #14B8A6);
-            color: #0B0F19;
-            font-weight: 700;
-            box-shadow: 0 4px 24px rgba(45, 212, 191, 0.3);
-        }
-
-        .btn-humanos:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(45, 212, 191, 0.4);
-        }
-
-        /* ═══════════════════ MISSION / VISION ═══════════════════ */
-        .mv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mv-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mv-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-        }
-
-        .mv-card:nth-child(1)::before { background: linear-gradient(90deg, #818CF8, #38BDF8); }
-        .mv-card:nth-child(2)::before { background: linear-gradient(90deg, #2DD4BF, #FB923C); }
-
-        .mv-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .mv-card:nth-child(1) h3 { color: var(--accent-purple); }
-        .mv-card:nth-child(2) h3 { color: var(--accent-teal); }
-
-        .mv-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        /* ═══════════════════ POLICIES ═══════════════════ */
-        .policies-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .policy-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .policy-card:hover {
-            border-color: var(--border-glow);
-            background: var(--bg-card-hover);
-        }
-
-        .policy-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .policy-card ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .policy-card li {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            line-height: 1.6;
-            padding-left: 1.25rem;
-            position: relative;
-        }
-
-        .policy-card li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.65em;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--text-muted);
-        }
-
-        /* ═══════════════════ FOOTER ═══════════════════ */
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-subtle);
-            padding: 3rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-brand {
-            font-weight: 900;
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF, #F472B6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-tagline {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover { color: var(--text-primary); }
-
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        .footer-contact a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.8rem;
-        }
-
-        .footer-contact a:hover { color: var(--accent-purple); }
-
-        /* ═══════════════════ CHAT BUBBLE ═══════════════════ */
-        .chat-fab {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.5rem;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            color: #0B0F19;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            box-shadow: 0 8px 32px rgba(129, 140, 248, 0.35), 0 2px 8px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-        }
-
-        .chat-fab:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(129, 140, 248, 0.45), 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .chat-fab svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        .chat-fab-pulse {
-            position: absolute;
-            top: -3px;
-            right: -3px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #22C55E;
-            border: 2px solid var(--bg-primary);
-            animation: pulse-dot 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
-
-        /* Chat modal */
-        .chat-modal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: flex-end;
-            justify-content: flex-end;
-            padding: 1rem;
-        }
-
-        .chat-modal-overlay.active { display: flex; }
-
-        .chat-modal {
-            width: 400px;
-            height: 620px;
-            max-width: 100%;
-            max-height: calc(100vh - 2rem);
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .chat-modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.25rem;
-            background: linear-gradient(135deg, rgba(129, 140, 248, 0.12), rgba(45, 212, 191, 0.08));
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .chat-modal-title {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .chat-modal-title span {
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .chat-modal-close {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            display: flex;
-        }
-
-        .chat-modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
-
-        .chat-modal iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-            background: var(--bg-primary);
-        }
-
-        /* ═══════════════════ ANIMATIONS ═══════════════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ═══════════════════ RESPONSIVE ═══════════════════ */
-        @media (max-width: 768px) {
-            nav { padding: 0 1rem; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                background: rgba(11, 15, 25, 0.98);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 0;
-                border-bottom: 1px solid var(--border-subtle);
-            }
-
-            .nav-links.open { display: flex; }
-            .nav-links a { padding: 0.75rem 1rem; }
-            .hamburger { display: flex; }
-
-            .pillars-grid,
-            .mv-grid,
-            .policies-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quebot-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .quebot-visual { min-height: 240px; }
-            .humanos-visual { min-height: 240px; }
-
-            .hero { min-height: 90vh; padding-top: 5rem; }
-
-            .footer-content { flex-direction: column; }
-            .footer-links { flex-direction: column; gap: 0.75rem; }
-
-            .chat-modal {
-                width: 100%;
-                height: calc(100vh - 2rem);
-                border-radius: 16px;
-            }
-
-            .chat-fab span { display: none; }
-            .chat-fab { padding: 1rem; border-radius: 50%; }
-        }
-
-        @media (max-width: 480px) {
-            section { padding: 4rem 1.25rem; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; justify-content: center; }
-        }
-
-        /* ═══════════════════ LANG SWITCH ═══════════════════ */
-        .lang-switch {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-        }
-        .lang-switch a {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lang-switch a:hover {
-            color: var(--text-secondary);
-            background: rgba(255,255,255,0.06);
-        }
-        .lang-switch .lang-active {
-            color: var(--text-primary);
-            font-weight: 700;
-            padding: 0.2rem 0.4rem;
-        }
-        .lang-switch .lang-sep {
-            color: var(--text-muted);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="/en/" class="nav-brand">SINAPSIS</a>
-        <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" class="nav-brand" aria-label="Sinapsis — home">
+            <img src="/assets/img/logo-sinapsis.png" alt="Sinapsis" width="760" height="240">
+        </a>
+        <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Open menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#quebot">QueBot</a></li>
-            <li><a href="https://www.humanos.eco" target="_blank">HumanOS</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="/en/privacy">Privacy</a></li>
-            <li><a href="/en/terms">Terms</a></li>
-            <li><a href="https://quebot.sinapsis.in" target="_blank" class="nav-cta">Try QueBot →</a></li>
+            <li><a href="#what-we-do">What we do</a></li>
+            <li><a href="#humanos">HumanOS</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#trust">Trust</a></li>
+            <li><a href="mailto:admin@sinapsis.in?subject=Initial%20diagnosis%20-%20Sinapsis" class="nav-cta">Book a diagnosis</a></li>
             <li class="lang-switch"><a href="/">ES</a> <span class="lang-sep">|</span> <span class="lang-active">EN</span></li>
         </ul>
     </nav>
 
+    <main id="main">
+
     <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>
-                <span class="brand-gradient">SINAPSIS</span> <span class="hero-spa">SpA</span>
-            </h1>
-            <p class="hero-tagline">
-                We connect data, artificial intelligence, and automation to transform complex information into clear, responsible, and actionable decisions.
-            </p>
-            <div class="hero-buttons">
-                <a href="#quebot" class="btn btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    Discover QueBot
-                </a>
-                <a href="#about" class="btn btn-outline">Learn more</a>
+    <header class="hero" id="home">
+        <div class="hero-grid">
+            <div>
+                <span class="hero-kicker">Consulting · Technology · Innovation — Chile</span>
+                <h1>We design <em>hybrid work systems</em> for companies that want to operate better.</h1>
+                <p class="hero-sub">
+                    We integrate people, processes, data, automation and artificial intelligence
+                    to turn complex information into clear decisions, efficient workflows and
+                    measurable results.
+                </p>
+                <div class="hero-buttons">
+                    <a href="mailto:admin@sinapsis.in?subject=Initial%20diagnosis%20-%20Sinapsis" class="btn btn-primary">Book a diagnosis</a>
+                    <a href="#humanos" class="btn btn-outline">Meet HumanOS</a>
+                </div>
+                <p class="hero-note">No promises of magic: we start by understanding how your organization actually works.</p>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 560 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+                    <defs>
+                        <linearGradient id="hubGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#12293F"/>
+                            <stop offset="1" stop-color="#0B1F33"/>
+                        </linearGradient>
+                    </defs>
+                    <path id="p1" d="M148,52  C200,52  210,160 228,182" fill="none" stroke="#C7D6EA" stroke-width="1.5"/>
+                    <path id="p2" d="M148,131 C195,131 205,180 224,196" fill="none" stroke="#C7D6EA" stroke-width="1.5"/>
+                    <path id="p3" d="M148,210 C180,210 195,210 218,210" fill="none" stroke="#C7D6EA" stroke-width="1.5"/>
+                    <path id="p4" d="M148,289 C195,289 205,240 224,224" fill="none" stroke="#BEE3D5" stroke-width="1.5"/>
+                    <path id="p5" d="M148,368 C200,368 210,260 228,238" fill="none" stroke="#BEE3D5" stroke-width="1.5"/>
+                    <path id="p6" d="M330,186 C355,168 370,110 400,92"  fill="none" stroke="#C7D6EA" stroke-width="1.5"/>
+                    <path id="p7" d="M336,210 C360,210 375,210 400,210" fill="none" stroke="#C7D6EA" stroke-width="1.5"/>
+                    <path id="p8" d="M330,234 C355,252 370,310 400,328" fill="none" stroke="#BEE3D5" stroke-width="1.5"/>
+                    <circle r="3.5" fill="#2563EB"><animateMotion dur="4.5s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion></circle>
+                    <circle r="3.5" fill="#2563EB"><animateMotion dur="4.5s" repeatCount="indefinite" begin="1.5s"><mpath href="#p3"/></animateMotion></circle>
+                    <circle r="3.5" fill="#16A97C"><animateMotion dur="4.5s" repeatCount="indefinite" begin="0.8s"><mpath href="#p5"/></animateMotion></circle>
+                    <circle r="3.5" fill="#2563EB"><animateMotion dur="4s" repeatCount="indefinite" begin="0.4s"><mpath href="#p7"/></animateMotion></circle>
+                    <circle r="3.5" fill="#16A97C"><animateMotion dur="4s" repeatCount="indefinite" begin="2s"><mpath href="#p8"/></animateMotion></circle>
+                    <g font-size="13" font-weight="600" fill="#0F2237" text-anchor="middle">
+                        <rect x="12" y="35"  width="136" height="34" rx="17" fill="#fff" stroke="#E3E9F0"/><text x="80" y="57">People</text>
+                        <rect x="12" y="114" width="136" height="34" rx="17" fill="#fff" stroke="#E3E9F0"/><text x="80" y="136">Processes</text>
+                        <rect x="12" y="193" width="136" height="34" rx="17" fill="#fff" stroke="#E3E9F0"/><text x="80" y="215">Data</text>
+                        <rect x="12" y="272" width="136" height="34" rx="17" fill="#fff" stroke="#DCEDE5"/><text x="80" y="294">Automation</text>
+                        <rect x="12" y="351" width="136" height="34" rx="17" fill="#fff" stroke="#DCEDE5"/><text x="80" y="373">Applied AI</text>
+                    </g>
+                    <circle cx="277" cy="210" r="60" fill="url(#hubGrad)"/>
+                    <circle cx="277" cy="210" r="60" fill="none" stroke="#2563EB" stroke-opacity="0.25" stroke-width="6"/>
+                    <g font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+                        <text x="277" y="198">Hybrid</text>
+                        <text x="277" y="214">work</text>
+                        <text x="277" y="230">system</text>
+                    </g>
+                    <g font-size="12.5" font-weight="600" text-anchor="middle">
+                        <rect x="402" y="75"  width="148" height="34" rx="17" fill="#EBF1FE" stroke="#C7D6EA"/><text x="476" y="97"  fill="#1D4FC4">Clear decisions</text>
+                        <rect x="402" y="193" width="148" height="34" rx="17" fill="#EBF1FE" stroke="#C7D6EA"/><text x="476" y="215" fill="#1D4FC4">Efficient workflows</text>
+                        <rect x="402" y="311" width="148" height="34" rx="17" fill="#E8F7F1" stroke="#BEE3D5"/><text x="476" y="333" fill="#0E8A63">Measurable results</text>
+                    </g>
+                </svg>
             </div>
         </div>
-        <div class="hero-scroll">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-        </div>
-    </section>
+    </header>
 
-    <!-- Qué hacemos -->
-    <section id="about">
+    <!-- What we do -->
+    <section id="what-we-do">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">⚡ What we do</span>
-                <h2 class="section-title">Three pillars for<br>intelligent decisions</h2>
-                <p class="section-subtitle">We integrate constantly evolving technology with human, ethical, and strategic judgment.</p>
+                <span class="section-label">What we do</span>
+                <h2 class="section-title">We turn scattered processes<br>into measurable work systems.</h2>
+                <p class="section-subtitle">
+                    We don't sell technology for its own sake. We design how your teams, tools and
+                    data will operate together — and we leave it running.
+                </p>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card reveal">
-                    <div class="pillar-icon">📊</div>
-                    <h3>Data</h3>
-                    <p>We collect, structure, and analyze information from multiple sources to generate actionable and traceable knowledge.</p>
+            <div class="cards-grid cols-4">
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                    </div>
+                    <h3>Process diagnosis and redesign</h3>
+                    <p>We map how the organization works, detect bottlenecks and redesign workflows with fewer steps and more control.</p>
                 </div>
-                <div class="pillar-card reveal">
-                    <div class="pillar-icon">🧠</div>
-                    <h3>Artificial Intelligence</h3>
-                    <p>We apply AI models responsibly to automate analysis, classification, and generation of relevant insights.</p>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg>
+                    </div>
+                    <h3>Automation and business workflows</h3>
+                    <p>We turn repetitive tasks, reports and manual follow-ups into automated flows integrated with your tools.</p>
                 </div>
-                <div class="pillar-card reveal">
-                    <div class="pillar-icon">⚙️</div>
-                    <h3>Automation</h3>
-                    <p>We design workflows that eliminate repetitive tasks, reduce errors, and allow people to focus on what matters.</p>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+                    </div>
+                    <h3>Analytics, dashboards and data</h3>
+                    <p>We structure scattered data into actionable models and indicators: dashboards that show what matters, when it matters.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QueBot -->
-    <section class="quebot-section" id="quebot">
-        <div class="container">
-            <div class="reveal">
-                <span class="section-label">🤖 Product</span>
-                <h2 class="section-title">QueBot</h2>
-                <p class="section-subtitle">Intelligent legal assistant powered by artificial intelligence.</p>
-            </div>
-            <div class="quebot-grid">
-                <div class="quebot-visual reveal">
-                    <div class="quebot-globe">🌐</div>
-                    <div class="quebot-label">QueBot</div>
-                    <div class="quebot-sublabel">AI Legal Assistant</div>
-                </div>
-                <div class="quebot-info reveal">
-                    <h3>Your legal assistant, always available</h3>
-                    <p>QueBot combines legal databases, updated case law, and artificial intelligence to answer legal queries quickly, accurately, and contextualized to Chilean law.</p>
-                    <ul class="quebot-features">
-                        <li>Legal queries in natural language</li>
-                        <li>Updated case law and regulations</li>
-                        <li>Real-time legal news</li>
-                        <li>Calendar and schedule integration</li>
-                        <li>Responses contextualized to Chilean law</li>
-                    </ul>
-                    <a href="https://quebot.sinapsis.in" target="_blank" class="btn btn-quebot">
-                        Try QueBot for free →
-                    </a>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/><circle cx="12" cy="12" r="2.5"/></svg>
+                    </div>
+                    <h3>Applied AI with human oversight</h3>
+                    <p>We bring in AI assistants and agents where they add real value — always with human judgment, traceability and clear limits.</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- HumanOS -->
-    <section class="humanos-section" id="humanos">
+    <section class="band-soft" id="humanos">
         <div class="container">
             <div class="reveal">
-                <span class="section-label" style="color: var(--accent-teal);">🌱 Product</span>
+                <span class="section-label green">Flagship product</span>
                 <h2 class="section-title">HumanOS</h2>
-                <p class="section-subtitle">Workplace Wellness Platform</p>
+                <p class="section-subtitle">
+                    The personal and business operating system to organize work, information,
+                    decisions and automations in a single environment.
+                </p>
             </div>
-            <div class="quebot-grid">
-                <div class="humanos-visual reveal">
-                    <div class="humanos-globe">🌱</div>
-                    <div class="humanos-label">HumanOS</div>
-                    <div class="humanos-sublabel">Workplace Wellness Platform</div>
-                </div>
-                <div class="humanos-info reveal">
-                    <h3>Your organizational wellness platform</h3>
-                    <p>HumanOS connects wellness data, workplace climate insights, and artificial intelligence to create healthier, more productive, and more human work environments.</p>
-                    <ul class="humanos-features">
-                        <li>Continuous workplace climate measurement</li>
-                        <li>AI-powered wellness insights</li>
-                        <li>Personalized action plans</li>
-                        <li>Leadership dashboards</li>
-                        <li>Integration with existing tools</li>
+            <div class="product-grid">
+                <div class="reveal">
+                    <p style="font-size: 0.98rem; line-height: 1.8;">
+                        HumanOS integrates calendar, tasks, finances, companies, reports, assistants,
+                        knowledge and automations. It is the concrete demonstration of what we do as a
+                        consulting firm: a hybrid work system actually running.
+                    </p>
+                    <ul class="product-bullets">
+                        <li>Centralizes personal and business information.</li>
+                        <li>Organizes tasks, commitments and decisions.</li>
+                        <li>Connects data, reports and alerts.</li>
+                        <li>Lets you operate multiple companies or projects.</li>
+                        <li>Integrates AI assistants for specific tasks.</li>
+                        <li>Reduces operational friction and dependence on scattered spreadsheets.</li>
                     </ul>
-                    <a href="https://www.humanos.eco" target="_blank" class="btn btn-humanos">
-                        Discover HumanOS →
-                    </a>
+                    <div class="product-ctas">
+                        <a href="https://www.humanos.eco" target="_blank" rel="noopener" class="btn btn-green">Meet HumanOS →</a>
+                        <a href="mailto:admin@sinapsis.in?subject=HumanOS%20demo" class="btn btn-outline">Request a demo</a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="module-panel" role="img" aria-label="HumanOS modules: calendar, tasks, companies, finances, reports, assistants, alerts, knowledge and workflows">
+                        <div class="module-panel-head">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span>humanos.eco — modules</span>
+                        </div>
+                        <div class="module-grid">
+                            <div class="module-chip"><span class="mi">📅</span>Calendar</div>
+                            <div class="module-chip"><span class="mi">✅</span>Tasks</div>
+                            <div class="module-chip"><span class="mi">🏢</span>Companies</div>
+                            <div class="module-chip"><span class="mi">💰</span>Finances</div>
+                            <div class="module-chip"><span class="mi">📈</span>Reports</div>
+                            <div class="module-chip"><span class="mi">🤖</span>Assistants</div>
+                            <div class="module-chip"><span class="mi">🔔</span>Alerts</div>
+                            <div class="module-chip"><span class="mi">📚</span>Knowledge</div>
+                            <div class="module-chip"><span class="mi">🔄</span>Workflows</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Misión y Visión -->
-    <section id="mission">
+    <!-- Services -->
+    <section id="services">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">🎯 Purpose</span>
-                <h2 class="section-title">Mission and Vision</h2>
+                <span class="section-label">Services</span>
+                <h2 class="section-title">Consulting that ends<br>in systems that run.</h2>
+                <p class="section-subtitle">
+                    Six service lines combined according to the problem — not the catalog.
+                </p>
             </div>
-            <div class="mv-grid">
-                <div class="mv-card reveal">
-                    <h3>Mission</h3>
-                    <p>To design, implement, and support solutions based on artificial intelligence, data, and automation that improve decision-making, operational efficiency, and sustainability for organizations and individuals, integrating constantly evolving technology with human, ethical, and strategic judgment, contributing to the adaptation and development of human capabilities in a changing technological environment.</p>
+            <div class="cards-grid cols-3">
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4"/><path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M12 2v20"/></svg>
+                    </div>
+                    <h3>Process and operations consulting</h3>
+                    <p>We map how your organization works, detect bottlenecks and redesign workflows to reduce friction, duplication and manual work.</p>
                 </div>
-                <div class="mv-card reveal">
-                    <h3>Vision</h3>
-                    <p>To be a leading company in the applied and responsible use of emerging technologies in Chile and Latin America, recognized for transforming complex information into clear and actionable decisions, accompanying technological and organizational evolution in a conscious, sustainable, and people-centered way.</p>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+                    </div>
+                    <h3>Workflow automation</h3>
+                    <p>We automate repetitive tasks, integrations, reports, alerts and operational steps that today depend on manual follow-up.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+                    </div>
+                    <h3>Analytics and Power BI</h3>
+                    <p>We build management dashboards, data models and actionable indicators so information stops hiding in spreadsheets, emails and disconnected systems.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+                    </div>
+                    <h3>Applied AI and specialized assistants</h3>
+                    <p>We design AI assistants, agents and tools with human oversight, security criteria, traceability and real business value.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+                    </div>
+                    <h3>Innovation and rapid prototyping</h3>
+                    <p>We go from ideas to working prototypes in short cycles, validating value before scaling investment.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Compliance, data and security</h3>
+                    <p>We accompany technology adoption considering privacy, information security, operational continuity, risk management and AI governance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Políticas Corporativas -->
-    <section id="policies" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+    <!-- Method -->
+    <section class="band-soft" id="method">
         <div class="container">
             <div class="reveal">
-                <span class="section-label">📋 Governance</span>
-                <h2 class="section-title">Corporate Policies</h2>
-                <p class="section-subtitle">Our commitments to security, privacy, and quality.</p>
-                <p style="margin-top: 1rem;"><a href="/en/privacy" style="color: var(--accent-purple); text-decoration: none; margin-right: 2rem;">📄 Privacy Policy →</a><a href="/en/terms" style="color: var(--accent-teal); text-decoration: none;">📋 Terms of Service →</a></p>
+                <span class="section-label">Method</span>
+                <h2 class="section-title">Five steps, zero magic.</h2>
+                <div class="method-quote">
+                    “We don't start by buying software or promising magic. We start by understanding
+                    how the organization works, where time is lost, where poor decisions are made,
+                    and which workflows can be redesigned.”
+                </div>
             </div>
-            <div class="policies-grid">
-                <div class="policy-card reveal">
-                    <h3>🔒 Information Systems</h3>
-                    <ul>
-                        <li>Secure, scalable, and auditable systems</li>
-                        <li>Modular and vendor-agnostic architectures</li>
-                        <li>Least-privilege access control and traceability</li>
-                        <li>Backups, testing environments, and recovery plans</li>
-                        <li>Continuous technology evaluation with real-value criteria</li>
-                    </ul>
+            <div class="method-steps">
+                <div class="method-step reveal">
+                    <span class="step-num">1</span>
+                    <h3>Diagnose</h3>
+                    <p>We understand how the organization works today: processes, systems, data and real pain points.</p>
                 </div>
-                <div class="policy-card reveal">
-                    <h3>🛡️ Data Protection and Privacy</h3>
-                    <ul>
-                        <li>Data used only for legitimate and defined purposes</li>
-                        <li>Reasonable technical and organizational measures</li>
-                        <li>Role-based restricted access</li>
-                        <li>No data sharing without legal basis or authorization</li>
-                        <li>Internal culture of digital responsibility</li>
-                    </ul>
+                <div class="method-step reveal">
+                    <span class="step-num">2</span>
+                    <h3>Design</h3>
+                    <p>We redesign workflows and define what gets automated, what gets measured and who decides.</p>
                 </div>
-                <div class="policy-card reveal">
-                    <h3>🔄 Operational Continuity</h3>
-                    <ul>
-                        <li>Identification of critical processes</li>
-                        <li>Contingency and recovery plans</li>
-                        <li>Essential information backups</li>
-                        <li>Periodic risk assessment</li>
-                        <li>Design oriented towards resilience and rapid recovery</li>
-                    </ul>
+                <div class="method-step reveal">
+                    <span class="step-num">3</span>
+                    <h3>Automate</h3>
+                    <p>We implement integrations, workflows and assistants in short, verifiable cycles.</p>
                 </div>
-                <div class="policy-card reveal">
-                    <h3>✅ Quality</h3>
-                    <ul>
-                        <li>Clear, useful, and sustainable solutions</li>
-                        <li>Continuous improvement of processes and services</li>
-                        <li>Feedback as strategic input</li>
-                        <li>Avoid unnecessary complexity</li>
-                        <li>Evidence-based decisions and professional judgment</li>
-                    </ul>
+                <div class="method-step reveal">
+                    <span class="step-num">4</span>
+                    <h3>Measure</h3>
+                    <p>We install indicators and dashboards to see the impact on time, cost and decision quality.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">5</span>
+                    <h3>Scale</h3>
+                    <p>We extend what works to more processes, teams or companies.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Capabilities of the Sinapsis ecosystem</h2>
+                <p class="section-subtitle">
+                    Our own product, specialized assistants and custom development — whatever the problem requires.
+                </p>
+            </div>
+            <div class="cards-grid cols-3">
+                <div class="card reveal">
+                    <span class="card-tag tag-green">Flagship product</span>
+                    <h3>HumanOS</h3>
+                    <p>Personal and business operating system: work, information, decisions and automations in a single environment.</p>
+                    <a href="https://www.humanos.eco" target="_blank" rel="noopener" class="card-link">Meet HumanOS →</a>
+                </div>
+                <div class="card reveal">
+                    <span class="card-tag tag-blue">Specialized assistant</span>
+                    <h3>QueBot</h3>
+                    <p>A specialized capability of the Sinapsis ecosystem: conversational and document assistants for specific domains such as legal, compliance, internal support or decision support.</p>
+                    <a href="https://quebot.sinapsis.in" target="_blank" rel="noopener" class="card-link">See use case →</a>
+                </div>
+                <div class="card reveal">
+                    <span class="card-tag tag-gray">Capability</span>
+                    <h3>Dashboards and management systems</h3>
+                    <p>Power BI dashboards and operational panels connected to your real data sources, with indicators that actually get used.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="card-tag tag-gray">Capability</span>
+                    <h3>Custom automations</h3>
+                    <p>Workflows that eliminate manual follow-up: reports, alerts, integrations and operational steps across systems.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="card-tag tag-gray">Capability</span>
+                    <h3>Internal agents and assistants</h3>
+                    <p>AI assistants for teams: internal support, document management and decision support — always with human oversight.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="card-tag tag-gray">Capability</span>
+                    <h3>Integrations</h3>
+                    <p>We connect the tools you already use — ERP, spreadsheets, email, messaging and in-house systems — into one coherent flow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="band-navy" id="trust">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Trust and compliance</span>
+                <h2 class="section-title">Security, privacy and compliance by design</h2>
+                <p class="section-subtitle">
+                    We design our solutions considering current Chilean regulation and take
+                    international standards as our working reference.
+                </p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-card reveal">
+                    <h3>Chilean regulation</h3>
+                    <ul>
+                        <li><strong>Law No. 21,719</strong> — Personal Data Protection: defined purposes, lawful bases, data subject rights and incident management.</li>
+                        <li><strong>Law No. 21,663</strong> — Cybersecurity Framework Law: information security and operational continuity as design criteria.</li>
+                        <li>Privacy, information security and AI governance integrated into the lifecycle of every solution — not bolted on at the end.</li>
+                    </ul>
+                </div>
+                <div class="trust-card reveal">
+                    <h3>Reference standards</h3>
+                    <ul>
+                        <li>We prepare documentation and controls compatible with international frameworks for security, privacy, quality and risk management.</li>
+                        <li>AI system governance with human oversight, traceability and risk assessment.</li>
+                    </ul>
+                    <div class="iso-chips" aria-label="ISO reference standards">
+                        <span class="iso-chip">ISO/IEC 27001</span>
+                        <span class="iso-chip">ISO/IEC 27701</span>
+                        <span class="iso-chip">ISO/IEC 42001</span>
+                        <span class="iso-chip">ISO 22301</span>
+                        <span class="iso-chip">ISO 9001</span>
+                        <span class="iso-chip">ISO 31000</span>
+                        <span class="iso-chip">ISO/IEC 27035</span>
+                    </div>
+                </div>
+            </div>
+            <p class="trust-disclaimer reveal">
+                We work aligned with these frameworks and design taking their controls as reference.
+                This reference describes how we work and <strong>does not imply formal certification</strong>
+                unless expressly stated. Details in our <a href="/cumplimiento">Compliance and Standards
+                Notice</a> (Spanish) and our <a href="/en/privacy">corporate policies</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-final" id="contact">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title">Let's talk about your processes</h2>
+                <p class="section-subtitle">
+                    Tell us how your organization works and we'll propose where to start:
+                    a focused initial diagnosis with findings and a concrete proposal.
+                </p>
+                <div class="hero-buttons">
+                    <a href="mailto:admin@sinapsis.in?subject=Initial%20diagnosis%20-%20Sinapsis" class="btn btn-primary">Book an initial diagnosis</a>
+                    <a href="https://www.humanos.eco" target="_blank" rel="noopener" class="btn btn-outline">See HumanOS in action</a>
+                </div>
+                <p class="cta-contact">Or write to us directly: <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
+    <footer class="site-footer">
+        <div class="footer-grid">
             <div>
-                <div class="footer-brand">SINAPSIS</div>
-                <p class="footer-tagline">Applied intelligence with purpose</p>
+                <div class="footer-brand-name">SINAPSIS <span style="font-weight: 500; color: #7A93AB;">SpA</span></div>
+                <p class="footer-tagline">
+                    Consulting, technology and innovation. Hybrid work systems designed
+                    and operating from Chile.
+                </p>
             </div>
-            <div class="footer-links">
-                <a href="#quebot">QueBot</a>
-                <a href="https://www.humanos.eco" target="_blank">HumanOS</a>
-                <a href="#mission">Mission</a>
-                <a href="/en/privacy">Privacy</a>
-                <a href="/en/terms">Terms</a>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#what-we-do">What we do</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#method">Method</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#trust">Trust and compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="https://www.humanos.eco" target="_blank" rel="noopener">HumanOS</a></li>
+                    <li><a href="https://quebot.sinapsis.in" target="_blank" rel="noopener">QueBot (specialized assistant)</a></li>
+                    <li><a href="mailto:admin@sinapsis.in?subject=HumanOS%20demo">Request a demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal and compliance</h4>
+                <ul>
+                    <li><a href="/en/privacy">Privacy Policy</a></li>
+                    <li><a href="/en/terms">Terms of Service</a></li>
+                    <li><a href="/datos-personales">Personal Data Policy (ES)</a></li>
+                    <li><a href="/cookies">Cookie Policy (ES)</a></li>
+                    <li><a href="/seguridad">Information Security (ES)</a></li>
+                    <li><a href="/ia-responsable">Responsible AI (ES)</a></li>
+                    <li><a href="/cumplimiento">Compliance and standards (ES)</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Sinapsis SpA · Santiago, Chile</p>
-            <div class="footer-contact">
-                <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a>
-            </div>
+            <p>© 2026 Sinapsis SpA · Santiago, Chile</p>
+            <p><a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
         </div>
     </footer>
 
-    <!-- QueBot Chat Bubble -->
-    <button class="chat-fab" onclick="openChat()" aria-label="Open QueBot">
-        <div class="chat-fab-pulse"></div>
+    <!-- Assistant (QueBot as capability) -->
+    <button class="chat-fab" onclick="openChat()" aria-label="Open Sinapsis assistant">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span>QueBot</span>
+        <span>Assistant</span>
     </button>
 
-    <!-- Chat Modal -->
     <div class="chat-modal-overlay" id="chatOverlay" onclick="if(event.target===this)closeChat()">
-        <div class="chat-modal">
+        <div class="chat-modal" role="dialog" aria-label="Sinapsis assistant">
             <div class="chat-modal-header">
                 <div class="chat-modal-title">
-                    🌐 <span>QueBot</span>
+                    Sinapsis Assistant
+                    <small>powered by QueBot</small>
                 </div>
                 <button class="chat-modal-close" onclick="closeChat()" aria-label="Close">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
-            <iframe id="chatFrame" title="QueBot Chat"></iframe>
+            <iframe id="chatFrame" title="Sinapsis assistant"></iframe>
         </div>
     </div>
 
     <script>
-        // Reveal on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Chat modal
         function openChat() {
             const overlay = document.getElementById('chatOverlay');
             const frame = document.getElementById('chatFrame');
@@ -1236,25 +509,18 @@
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeChat() {
             document.getElementById('chatOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeChat(); });
 
-        // Close on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeChat();
-        });
-
-        // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const target = document.querySelector(link.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu
                     document.querySelector('.nav-links')?.classList.remove('open');
                 }
             });
