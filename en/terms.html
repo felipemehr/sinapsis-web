@@ -4,215 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service — Sinapsis SpA</title>
-    <meta name="description" content="Terms of Service of Sinapsis SpA and QueBot.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <meta name="description" content="Terms of Service for the sinapsis.in website and the services of Sinapsis SpA, including HumanOS and QueBot.">
+    <link rel="canonical" href="https://sinapsis.in/en/terms">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --bg-primary: #0B0F19;
-            --bg-secondary: #111827;
-            --bg-card: #1A2035;
-            --text-primary: #F1F5F9;
-            --text-secondary: #94A3B8;
-            --text-muted: #64748B;
-            --accent-purple: #818CF8;
-            --accent-teal: #2DD4BF;
-            --border-subtle: rgba(148, 163, 184, 0.08);
-        }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.8;
-        }
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 0 2rem; height: 64px;
-            display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(24px); background: rgba(11, 15, 25, 0.85);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .nav-brand {
-            font-weight: 900; font-size: 1.2rem; letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF, #F472B6);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent; text-decoration: none;
-        }
-        .nav-back {
-            color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
-            font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.2s;
-        }
-        .nav-back:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
-        .content {
-            max-width: 780px; margin: 0 auto;
-            padding: 7rem 2rem 4rem;
-        }
-        h1 {
-            font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #818CF8, #2DD4BF);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .last-updated { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
-        h2 {
-            font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem;
-            color: var(--accent-purple);
-        }
-        p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; }
-        ul, ol {
-            color: var(--text-secondary); margin: 0.5rem 0 1.5rem 1.5rem;
-            font-size: 0.95rem;
-        }
-        li { margin-bottom: 0.4rem; }
-        a { color: var(--accent-teal); }
-        strong { color: var(--text-primary); }
-        footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 2rem; text-align: center;
-        }
-        footer p { color: var(--text-muted); font-size: 0.8rem; }
-        footer a { color: var(--text-secondary); text-decoration: none; }
-        @media (max-width: 768px) {
-            .content { padding: 6rem 1.25rem 3rem; }
-            h1 { font-size: 1.8rem; }
-        }
-
-        /* ═══════════════════ LANG SWITCH ═══════════════════ */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .lang-switch {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-        }
-        .lang-switch a {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lang-switch a:hover {
-            color: var(--text-secondary);
-            background: rgba(255,255,255,0.06);
-        }
-        .lang-switch .lang-active {
-            color: var(--text-primary);
-            font-weight: 700;
-            padding: 0.2rem 0.4rem;
-        }
-        .lang-switch .lang-sep {
-            color: var(--text-muted);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <nav>
-        <a href="/en/" class="nav-brand">SINAPSIS</a>
-        <div class="nav-right">
-            <a href="/en/" class="nav-back">← Back to home</a>
-            <a href="https://www.humanos.eco" target="_blank" class="nav-back">HumanOS ↗</a>
-            <span class="lang-switch"><a href="/terms">ES</a> <span class="lang-sep">|</span> <span class="lang-active">EN</span></span>
-        </div>
+    <nav class="site-nav" aria-label="Navigation">
+        <a href="/en/" class="nav-brand" aria-label="Sinapsis — home">
+            <img src="/assets/img/logo-sinapsis.png" alt="Sinapsis" width="760" height="240">
+        </a>
+        <ul class="nav-links" style="display:flex;">
+            <li><a href="/en/">← Back to home</a></li>
+            <li class="lang-switch"><a href="/terms">ES</a> <span class="lang-sep">|</span> <span class="lang-active">EN</span></li>
+        </ul>
     </nav>
 
-    <div class="content">
+    <main class="legal-content">
         <h1>Terms of Service</h1>
-        <p class="last-updated">Last updated: March 6, 2025</p>
+        <p class="last-updated">Last updated: July 5, 2026</p>
 
-        <p>These Terms of Service ("Terms") govern the use of the sinapsis.in website and the QueBot service (the "Services") operated by Sinapsis SpA ("we", "the Company").</p>
-        <p>By accessing or using the Services, you accept these Terms. If you do not agree, do not use the Services.</p>
+        <div class="legal-notice">
+            This document is an initial corporate version and must be reviewed by legal counsel
+            before being considered final.
+        </div>
 
-        <h2>1. Service description</h2>
-        <p>QueBot is an AI-based legal assistant that provides general legal information and guidance. <strong>QueBot does not replace professional legal advice from a lawyer.</strong></p>
+        <p>These terms govern the use of the sinapsis.in website and the services operated by
+        Sinapsis SpA ("Sinapsis", "we"), including the HumanOS platform and the specialized assistant
+        QueBot (collectively, the "Services"). By accessing or using the Services you accept these
+        terms; if you do not agree, do not use them.</p>
+
+        <h2>1. About Sinapsis</h2>
+        <p>Sinapsis SpA is a Chilean consulting, technology and innovation firm, domiciled in
+        Santiago, Chile — [Complete legal name / tax ID / registered address].</p>
+
+        <h2>2. Description of the Services</h2>
         <ul>
-            <li>QueBot's responses are for guidance and informational purposes only.</li>
-            <li>They do not constitute binding legal advice.</li>
-            <li>For specific situations, always consult with a legal professional.</li>
+            <li><strong>Website:</strong> corporate information and contact channels.</li>
+            <li><strong>HumanOS:</strong> platform integrating calendar, tasks, finances, companies, reports, assistants, knowledge and automations.</li>
+            <li><strong>QueBot:</strong> specialized conversational and document assistant (for example, in legal or compliance domains) based on artificial intelligence.</li>
         </ul>
+        <p><strong>AI-based assistants provide reference information; they do not replace the advice
+        of a licensed professional</strong> (lawyer, accountant, auditor or other). For specific
+        situations, always consult a professional.</p>
 
-        <h2>2. Registration and account</h2>
+        <h2>3. Registration and account</h2>
         <ul>
-            <li>You can access QueBot through Google OAuth authentication.</li>
-            <li>You are responsible for maintaining the security of your account.</li>
+            <li>Some Services require an account, including authentication with Google OAuth.</li>
+            <li>You are responsible for keeping your credentials secure and for the activity performed with them.</li>
             <li>You must provide truthful and up-to-date information.</li>
-            <li>Do not share your access credentials.</li>
         </ul>
 
-        <h2>3. Acceptable use</h2>
-        <p>By using the Services, you agree to:</p>
+        <h2>4. Acceptable use</h2>
+        <p>When using the Services you agree to:</p>
         <ul>
-            <li>Not use the service for illegal or fraudulent activities.</li>
-            <li>Not attempt to access other users' data.</li>
+            <li>Not use them for illegal, fraudulent, abusive or discriminatory activities.</li>
+            <li>Not attempt to access other users' data or compromise system security.</li>
             <li>Not interfere with the operation of the Services.</li>
-            <li>Not reverse engineer the system.</li>
+            <li>Not reverse engineer the software.</li>
             <li>Respect intellectual property rights.</li>
         </ul>
 
-        <h2>4. Intellectual property</h2>
+        <h2>5. Intellectual property</h2>
         <ul>
-            <li>The software, design, and content of the Services are the property of Sinapsis SpA.</li>
-            <li>Responses generated by QueBot are provided for your personal or professional use.</li>
-            <li>Processed legal data comes from public sources and legal databases.</li>
+            <li>The software, design, trademarks and content of the Services are the property of Sinapsis SpA or its licensors.</li>
+            <li>You retain rights over the content you contribute; you grant us a limited license to process it for the sole purpose of providing the service.</li>
+            <li>Responses generated by the assistants are provided for your personal or professional use.</li>
         </ul>
 
-        <h2>5. Google integrations</h2>
+        <h2>6. Google integrations</h2>
         <p>If you authorize integration with Google services:</p>
         <ul>
-            <li>We will only access data you explicitly authorize.</li>
-            <li>You can revoke access at any time from <a href="https://myaccount.google.com/permissions" target="_blank">your Google account settings</a>.</li>
-            <li>Google data usage complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>.</li>
+            <li>We will only access the data you explicitly authorize.</li>
+            <li>You can revoke access at any time from <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">your Google account settings</a>.</li>
+            <li>The use of Google data complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>.</li>
         </ul>
 
-        <h2>6. Limitation of liability</h2>
+        <h2>7. Privacy and data</h2>
+        <p>The processing of personal data is governed by our <a href="/en/privacy">Privacy Policy</a>.</p>
+
+        <h2>8. Limitation of liability</h2>
         <ul>
             <li>The Services are provided "as is" and "as available".</li>
-            <li>We do not guarantee the accuracy, completeness, or currency of information provided by QueBot.</li>
-            <li>We are not responsible for decisions made based solely on QueBot responses.</li>
-            <li>Our maximum liability is limited to the amount paid for the Services in the last 12 months.</li>
+            <li>AI-generated responses may contain errors, omissions or outdated information; we do not guarantee their accuracy, completeness or currency.</li>
+            <li>We are not responsible for decisions made based exclusively on AI assistant responses without human verification.</li>
+            <li>To the maximum extent permitted by law, our total liability is limited to the amount paid for the Services in the last 12 months.</li>
         </ul>
 
-        <h2>7. Service availability</h2>
-        <p>We strive to keep the Services continuously available, but:</p>
+        <h2>9. Service availability</h2>
         <ul>
             <li>Interruptions may occur due to maintenance or updates.</li>
             <li>We do not guarantee uninterrupted availability.</li>
-            <li>We reserve the right to modify or discontinue features with reasonable prior notice.</li>
+            <li>We may modify or discontinue features with reasonable prior notice.</li>
         </ul>
 
-        <h2>8. Termination</h2>
+        <h2>10. Professional services</h2>
+        <p>Consulting, implementation or custom development services are governed by the specific
+        proposals and contracts signed with each client, which prevail over these terms where
+        applicable.</p>
+
+        <h2>11. Termination</h2>
         <ul>
-            <li>You may stop using the Services at any time.</li>
-            <li>You may request the deletion of your account and associated data.</li>
-            <li>We reserve the right to suspend accounts that violate these Terms.</li>
+            <li>You may stop using the Services at any time and request deletion of your account and associated data.</li>
+            <li>We may suspend accounts that violate these terms.</li>
         </ul>
 
-        <h2>9. Applicable law</h2>
-        <p>These Terms are governed by the laws of the Republic of Chile. Any dispute shall be submitted to the jurisdiction of the ordinary courts of Santiago, Chile.</p>
+        <h2>12. Governing law</h2>
+        <p>These terms are governed by the laws of the Republic of Chile. Any dispute will be
+        submitted to the ordinary courts of Santiago, Chile, without prejudice to non-waivable
+        consumer rights.</p>
 
-        <h2>10. Modifications</h2>
-        <p>We may modify these Terms by posting the updated version on this page. Continued use of the Services after changes constitutes your acceptance.</p>
+        <h2>13. Changes</h2>
+        <p>We may modify these terms by publishing the updated version on this page. Continued use
+        of the Services after changes constitutes your acceptance.</p>
 
-        <h2>11. Contact</h2>
-        <p>For inquiries about these Terms:</p>
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></li>
-            <li><strong>Company:</strong> Sinapsis SpA, Santiago, Chile</li>
-        </ul>
-    </div>
+        <h2>14. Contact</h2>
+        <p><a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> · Sinapsis SpA, Santiago, Chile</p>
 
-    <footer>
-        <p>© 2025 Sinapsis SpA · <a href="/en/">Home</a> · <a href="/en/privacy">Privacy Policy</a> · <a href="https://www.humanos.eco" target="_blank">HumanOS</a></p>
+        <nav class="legal-footer-nav" aria-label="Legal documents">
+            <a href="/en/privacy">Privacy</a>
+            <a href="/en/terms">Terms</a>
+            <a href="/cumplimiento">Compliance (ES)</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer" style="padding: 2rem;">
+        <div class="footer-bottom" style="margin-top: 0; padding-top: 0; border-top: none;">
+            <p>© 2026 Sinapsis SpA · Santiago, Chile</p>
+            <p><a href="/en/">Home</a> · <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
+        </div>
     </footer>
 </body>
 </html>
