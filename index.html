@@ -502,26 +502,12 @@
         </div>
     </footer>
 
-    <!-- Asistente (QueBot como capacidad) -->
-    <button class="chat-fab" onclick="openChat()" aria-label="Abrir asistente Sinapsis">
+    <!-- Asistente (QueBot como capacidad) — abre en pestaña nueva:
+         quebot.sinapsis.in envía X-Frame-Options: DENY, no es embebible -->
+    <a class="chat-fab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Abrir asistente Sinapsis (pestaña nueva)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Asistente</span>
-    </button>
-
-    <div class="chat-modal-overlay" id="chatOverlay" onclick="if(event.target===this)closeChat()">
-        <div class="chat-modal" role="dialog" aria-label="Asistente Sinapsis">
-            <div class="chat-modal-header">
-                <div class="chat-modal-title">
-                    Asistente Sinapsis
-                    <small>con tecnología QueBot</small>
-                </div>
-                <button class="chat-modal-close" onclick="closeChat()" aria-label="Cerrar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                </button>
-            </div>
-            <iframe id="chatFrame" title="Asistente Sinapsis"></iframe>
-        </div>
-    </div>
+    </a>
 
     <script>
         // Reveal on scroll
@@ -531,20 +517,6 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Asistente modal
-        function openChat() {
-            const overlay = document.getElementById('chatOverlay');
-            const frame = document.getElementById('chatFrame');
-            if (!frame.src) frame.src = 'https://quebot.sinapsis.in';
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeChat() {
-            document.getElementById('chatOverlay').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeChat(); });
 
         // Smooth scroll + cierre de menú móvil
         document.querySelectorAll('a[href^="#"]').forEach(link => {
