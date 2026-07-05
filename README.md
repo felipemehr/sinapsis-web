@@ -17,4 +17,4 @@ Sitio estático sin build: HTML + CSS compartido en `assets/css/site.css`.
 - Las URLs `/privacy` y `/en/privacy` están referenciadas en la configuración de Google OAuth (QueBot) — no romperlas.
 - GitHub Pages sirve `foo.html` en `/foo` (clean URLs). Localmente: `npx serve -l 4173 .` replica ese comportamiento.
 - Deploy: push a `main` → GitHub Pages publica automáticamente.
-- Textos legales: versiones corporativas iniciales con placeholders `[Completar ...]`; requieren revisión de asesoría legal.
+- Textos legales: versiones corporativas iniciales con datos de identidad completos (RUT 78.327.684-4, domicilio Temuco, 2026-07-05); requieren revisión de asesoría legal.
