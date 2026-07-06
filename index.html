@@ -483,12 +483,11 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // ── Demo QueBot embebida ─────────────────────────────────────────────
-        // quebot.sinapsis.in debe permitir framing desde sinapsis.in
-        // (CSP frame-ancestors — PR fix/embed-sinapsis-frame-ancestors en el repo
-        // QueBot). Mientras ese cambio no esté deployado, el iframe cargaría una
-        // página bloqueada: el flag mantiene el fallback sobrio con link directo.
-        // Al deployar el PR: cambiar a true (un commit).
-        const QUEBOT_EMBED = false;
+        // Habilitada 2026-07-06: quebot.sinapsis.in ya envía
+        // frame-ancestors 'self' https://sinapsis.in https://www.sinapsis.in
+        // (merge 2830893 en el repo QueBot). Si QueBot volviera a bloquear
+        // framing, volver a false restaura el fallback sobrio.
+        const QUEBOT_EMBED = true;
         if (QUEBOT_EMBED) {
             const slot = document.getElementById('quebotEmbedSlot');
             const frame = document.createElement('iframe');

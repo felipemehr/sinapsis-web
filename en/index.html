@@ -458,9 +458,9 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // QueBot embedded demo — see ES page for details. Flip when the QueBot
-        // frame-ancestors PR is deployed.
-        const QUEBOT_EMBED = false;
+        // QueBot embedded demo — enabled 2026-07-06 (frame-ancestors allowlist
+        // live on quebot.sinapsis.in). Flip to false to restore the fallback.
+        const QUEBOT_EMBED = true;
         if (QUEBOT_EMBED) {
             const slot = document.getElementById('quebotEmbedSlot');
             const frame = document.createElement('iframe');
