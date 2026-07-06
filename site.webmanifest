@@ -1,0 +1,15 @@
+{
+  "name": "Sinapsis SpA",
+  "short_name": "Sinapsis",
+  "description": "Consultoría, tecnología e innovación aplicada. Sistemas de trabajo híbridos con personas, procesos, datos, automatización e IA.",
+  "lang": "es-CL",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    { "src": "/assets/img/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

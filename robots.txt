@@ -1,0 +1,5 @@
+# robots.txt — Sinapsis SpA (sinapsis.in)
+User-agent: *
+Allow: /
+
+Sitemap: https://sinapsis.in/sitemap.xml

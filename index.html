@@ -30,6 +30,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon-512.png">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,14 +40,18 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "ProfessionalService"],
       "name": "Sinapsis SpA",
       "url": "https://sinapsis.in",
       "logo": "https://sinapsis.in/assets/img/icon-512.png",
+      "image": "https://sinapsis.in/assets/img/og-image.png",
       "description": "Firma chilena de consultoría, tecnología e innovación aplicada. Diseñamos sistemas de trabajo híbridos: personas, procesos, datos, automatización e inteligencia artificial operando juntos.",
+      "slogan": "Consultoría, tecnología e innovación aplicada",
       "email": "admin@sinapsis.in",
       "taxID": "78.327.684-4",
-      "address": { "@type": "PostalAddress", "streetAddress": "San Martín 924, Oficina 213", "addressLocality": "Temuco", "addressCountry": "CL" },
+      "address": { "@type": "PostalAddress", "streetAddress": "San Martín 924, Oficina 213", "addressLocality": "Temuco", "addressRegion": "La Araucanía", "addressCountry": "CL" },
+      "areaServed": { "@type": "Country", "name": "Chile" },
+      "knowsAbout": ["Consultoría tecnológica", "Automatización de procesos", "Inteligencia artificial aplicada", "Transformación digital", "Gobernanza de IA", "Protección de datos", "Business Intelligence"],
       "sameAs": []
     }
     </script>
