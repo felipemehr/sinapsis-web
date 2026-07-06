@@ -450,6 +450,15 @@
         </div>
     </footer>
 
+    <!-- Assistant (QueBot as capability) — always-visible FAB:
+         opens quebot.sinapsis.in in a new tab. Permanent fallback for the
+         embedded demo (#quebot): if the iframe ever fails at runtime,
+         this button keeps the chat reachable. DO NOT remove. -->
+    <a class="chat-fab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Open Sinapsis assistant (new tab)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Assistant</span>
+    </a>
+
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

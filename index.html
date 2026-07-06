@@ -473,6 +473,15 @@
         </div>
     </footer>
 
+    <!-- Asistente (QueBot como capacidad) — FAB siempre visible:
+         abre quebot.sinapsis.in en pestaña nueva. Es el fallback permanente
+         de la demo embebida (#quebot): si el iframe fallara en runtime,
+         este botón sigue dando acceso al chat. NO remover. -->
+    <a class="chat-fab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Abrir asistente Sinapsis (pestaña nueva)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Asistente</span>
+    </a>
+
     <script>
         // Reveal on scroll
         const observer = new IntersectionObserver((entries) => {
