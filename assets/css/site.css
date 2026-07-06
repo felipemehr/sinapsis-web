@@ -56,7 +56,7 @@ a:focus-visible, button:focus-visible {
 /* ═══════════════════ NAV ═══════════════════ */
 nav.site-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    height: 68px;
+    height: 76px;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 2rem;
     background: rgba(255, 255, 255, 0.9);
@@ -66,7 +66,7 @@ nav.site-nav {
 }
 
 .nav-brand { display: inline-flex; align-items: center; text-decoration: none; }
-.nav-brand img { height: 34px; width: auto; display: block; }
+.nav-brand img { height: 46px; width: auto; display: block; }
 
 .nav-links {
     display: flex; align-items: center; gap: 0.25rem;
@@ -112,7 +112,7 @@ nav.site-nav {
 
 /* ═══════════════════ ESTRUCTURA ═══════════════════ */
 main { display: block; }
-section { padding: 5.5rem 2rem; }
+section { padding: 6.5rem 2rem; }
 .container { max-width: 1120px; margin: 0 auto; }
 .band-soft { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .band-navy { background: linear-gradient(160deg, var(--bg-navy), var(--bg-navy-2)); color: #D7E2EE; }
@@ -565,6 +565,84 @@ footer.site-footer {
 }
 .legal-footer-nav a { color: var(--ink-soft); text-decoration: none; }
 .legal-footer-nav a:hover { color: var(--blue); }
+
+/* ═══════════════════ ITERACIÓN 2 (2026-07-06) ═══════════════════ */
+/* Qué resuelve (dolores) */
+.pain-list { list-style: none; margin: 1.2rem 0 1.8rem; }
+.pain-list li {
+    position: relative; padding: 0.4rem 0 0.4rem 1.6rem;
+    color: var(--ink-soft); font-size: 0.95rem; line-height: 1.65;
+}
+.pain-list li::before {
+    content: ''; position: absolute; left: 0; top: 0.95em;
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--blue); opacity: 0.7;
+}
+.mini-label {
+    display: block; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 1.6rem 0 0.4rem;
+}
+
+/* Entregables por servicio */
+.deliverables { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.deliverable {
+    font-size: 0.74rem; font-weight: 600; color: var(--blue-dark);
+    background: var(--blue-ghost); border: 1px solid rgba(37, 99, 235, 0.16);
+    padding: 0.22rem 0.6rem; border-radius: 999px;
+}
+.card .deliverables-label {
+    display: block; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-top: 1.1rem;
+}
+
+/* Demo QueBot: browser card */
+.browser-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+}
+.browser-card-head {
+    display: flex; align-items: center; gap: 0.55rem;
+    padding: 0.8rem 1.2rem; background: var(--bg-navy);
+}
+.browser-card-head .dot { width: 9px; height: 9px; border-radius: 50%; }
+.browser-card-head .dot:nth-child(1) { background: #FF6B6B; }
+.browser-card-head .dot:nth-child(2) { background: #FFC94D; }
+.browser-card-head .dot:nth-child(3) { background: #2ECC71; }
+.browser-card-head span { color: #B8C8DA; font-size: 0.76rem; font-weight: 600; margin-left: 0.4rem; }
+.quebot-embed { display: block; width: 100%; height: 560px; border: none; background: #fff; }
+.quebot-fallback {
+    padding: 2.6rem 2rem; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.quebot-fallback p { color: var(--ink-soft); font-size: 0.95rem; max-width: 480px; line-height: 1.7; }
+.quebot-notice {
+    font-size: 0.78rem; color: var(--muted);
+    margin-top: 0.9rem; text-align: center;
+}
+
+/* Cumplimiento: pilares */
+.pillars-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 3rem; }
+.standards-note {
+    margin-top: 2rem; padding: 1.3rem 1.6rem;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; font-size: 0.88rem; color: #C4D4E5; line-height: 1.75;
+}
+.policy-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-top: 1.2rem; }
+.policy-links a { color: #7FB4FF; font-size: 0.85rem; text-decoration: none; }
+.policy-links a:hover { text-decoration: underline; }
+
+/* Footer con marca */
+.footer-brand-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+.footer-brand-row img { height: 44px; width: 44px; }
+
+@media (max-width: 768px) {
+    .pillars-4 { grid-template-columns: 1fr; }
+    .quebot-embed { height: 480px; }
+    .nav-brand img { height: 38px; }
+}
 
 /* ═══════════════════ ANIMACIONES ═══════════════════ */
 .reveal {
