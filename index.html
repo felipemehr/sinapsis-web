@@ -76,7 +76,7 @@
             <li><a href="#quebot">QueBot</a></li>
             <li><a href="#confianza">Cumplimiento</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <li><a href="mailto:admin@sinapsis.in?subject=Diagn%C3%B3stico%20inicial%20Sinapsis" class="nav-cta">Agendar diagnóstico</a></li>
+            <li><a href="#diagnostico" class="nav-cta">Diagnóstico gratuito</a></li>
             <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/">EN</a></li>
         </ul>
     </nav>
@@ -95,7 +95,7 @@
                     y resultados medibles.
                 </p>
                 <div class="hero-buttons">
-                    <a href="mailto:admin@sinapsis.in?subject=Diagn%C3%B3stico%20inicial%20Sinapsis" class="btn btn-primary">Agendar diagnóstico</a>
+                    <a href="#diagnostico" class="btn btn-primary">Diagnóstico gratuito</a>
                     <a href="#humanos" class="btn btn-outline">Conocer HumanOS</a>
                 </div>
                 <p class="hero-note">Consultoría, tecnología e innovación aplicada desde Chile.</p>
@@ -408,6 +408,82 @@
         </div>
     </section>
 
+    <!-- Diagnóstico gratuito (formulario) -->
+    <section class="band-soft" id="diagnostico">
+        <div class="container">
+            <div class="diag-grid">
+                <div class="diag-intro reveal">
+                    <span class="section-label green">Sin costo</span>
+                    <h2 class="section-title">Solicita tu diagnóstico<br>digital gratuito</h2>
+                    <p class="section-subtitle" style="max-width: 480px;">
+                        Cuéntanos de tu empresa y en poco tiempo te preparamos un diagnóstico
+                        personalizado de oportunidades digitales — sin costo.
+                    </p>
+                    <ul class="diag-perks">
+                        <li><strong>Personalizado</strong> a tu rubro y forma de operar.</li>
+                        <li>Oportunidades concretas de <strong>automatización, datos e IA</strong>.</li>
+                        <li>Sin compromiso: te llega <strong>directo a tu correo</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="diag-card reveal">
+                    <form class="diag-form" id="diagForm" novalidate>
+                        <div class="diag-field" id="f-empresa">
+                            <label for="d-empresa">Empresa <span class="req" aria-hidden="true">*</span></label>
+                            <input type="text" id="d-empresa" name="empresa" autocomplete="organization"
+                                   placeholder="Nombre de tu empresa" required>
+                            <span class="diag-error">Cuéntanos el nombre de tu empresa.</span>
+                        </div>
+
+                        <div class="diag-field" id="f-sitio">
+                            <label for="d-sitio">Sitio web</label>
+                            <span class="hint">Lo más útil para personalizar tu diagnóstico.</span>
+                            <input type="text" id="d-sitio" name="sitioWeb" inputmode="url"
+                                   placeholder="www.tuempresa.cl">
+                        </div>
+
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-nombre">
+                                <label for="d-nombre">Tu nombre <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="d-nombre" name="nombre" autocomplete="name"
+                                       placeholder="Nombre y apellido" required>
+                                <span class="diag-error">Dinos tu nombre.</span>
+                            </div>
+                            <div class="diag-field" id="f-email">
+                                <label for="d-email">Correo <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="d-email" name="email" autocomplete="email"
+                                       placeholder="tu@correo.cl" required>
+                                <span class="diag-error">Ingresa un correo válido.</span>
+                            </div>
+                        </div>
+
+                        <div class="diag-field" id="f-rubro">
+                            <label for="d-rubro">¿A qué se dedican?</label>
+                            <textarea id="d-rubro" name="rubro" rows="2"
+                                      placeholder="En una línea: rubro, productos o servicios principales."></textarea>
+                        </div>
+
+                        <!-- honeypot anti-bot: debe quedar vacío -->
+                        <div class="diag-hp" aria-hidden="true">
+                            <label for="d-confirm">No completar este campo</label>
+                            <input type="text" id="d-confirm" name="confirmEmail" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary diag-submit" id="diagSubmit">
+                            Solicitar diagnóstico gratuito
+                        </button>
+                        <p class="diag-consent">
+                            Al enviar aceptas que te contactemos con tu diagnóstico. Tratamos tus datos según nuestra
+                            <a href="/privacy">Política de Privacidad</a>.
+                        </p>
+
+                        <div class="diag-status" id="diagStatus" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA final -->
     <section class="cta-final" id="contacto">
         <div class="container">
@@ -529,6 +605,87 @@
                 }
             });
         });
+
+        // ── Formulario diagnóstico gratuito ─────────────────────────────────
+        (function () {
+            const form = document.getElementById('diagForm');
+            if (!form) return;
+            const submitBtn = document.getElementById('diagSubmit');
+            const statusBox = document.getElementById('diagStatus');
+            const ENDPOINT = 'https://www.humanos.eco/api/diagnostico-request';
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function setInvalid(fieldId, invalid) {
+                const el = document.getElementById(fieldId);
+                if (el) el.classList.toggle('invalid', invalid);
+            }
+            function clearErrors() {
+                ['f-empresa', 'f-nombre', 'f-email'].forEach(id => setInvalid(id, false));
+            }
+            function showStatus(kind, html) {
+                statusBox.className = 'diag-status show ' + kind;
+                statusBox.innerHTML = html;
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                clearErrors();
+
+                const empresa = form.empresa.value.trim();
+                const sitioWeb = form.sitioWeb.value.trim();
+                const nombre = form.nombre.value.trim();
+                const email = form.email.value.trim();
+                const rubro = form.rubro.value.trim();
+                const confirmEmail = form.confirmEmail.value; // honeypot
+
+                // Validación cliente
+                let firstBad = null;
+                if (!empresa) { setInvalid('f-empresa', true); firstBad = firstBad || 'd-empresa'; }
+                if (!nombre) { setInvalid('f-nombre', true); firstBad = firstBad || 'd-nombre'; }
+                if (!email || !emailRe.test(email)) { setInvalid('f-email', true); firstBad = firstBad || 'd-email'; }
+                if (firstBad) {
+                    statusBox.className = 'diag-status';
+                    document.getElementById(firstBad)?.focus();
+                    return;
+                }
+
+                // Bot: honeypot lleno → simular éxito, no enviar
+                if (confirmEmail) {
+                    showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Estamos preparando tu diagnóstico personalizado. Te llegará a tu correo en breve.');
+                    form.reset();
+                    return;
+                }
+
+                const payload = { empresa, sitioWeb, nombre, email, rubro, confirmEmail };
+
+                submitBtn.setAttribute('aria-busy', 'true');
+                const originalLabel = submitBtn.textContent;
+                submitBtn.textContent = 'Enviando…';
+                statusBox.className = 'diag-status';
+
+                try {
+                    const res = await fetch(ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (res.ok) {
+                        showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Estamos preparando tu diagnóstico personalizado. Te llegará a tu correo en breve.');
+                        form.reset();
+                    } else if (res.status === 429) {
+                        showStatus('error', '<span class="diag-status-title">Recibimos muchas solicitudes</span>Espera un momento y vuelve a intentar. Si es urgente, escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a>.');
+                    } else {
+                        showStatus('error', '<span class="diag-status-title">No pudimos enviar tu solicitud</span>Revisa los datos e intenta de nuevo, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                    }
+                } catch (err) {
+                    showStatus('error', '<span class="diag-status-title">Hubo un problema de conexión</span>Inténtalo nuevamente en unos minutos, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                } finally {
+                    submitBtn.removeAttribute('aria-busy');
+                    submitBtn.textContent = originalLabel;
+                }
+            });
+        })();
     </script>
 
 </body>
