@@ -1,0 +1,35 @@
+{
+  "_comment": "Registro de versiones congeladas de documentos legales. Solo se agregan entradas; nunca se modifican ni eliminan.",
+  "entries": [
+    {
+      "doc": "privacy",
+      "version": "v1.0.0",
+      "title": "Política de Privacidad",
+      "file": "policies/versions/privacy/v1.0.0/privacy.html",
+      "sha256": "8762b5f6456f500e18b518f607f41b2f684c32e545cc104187b8e3cf9f936ce8",
+      "bytes": 10517,
+      "frozen_at": "2026-07-13T07:14:50+00:00",
+      "source": "privacy.html"
+    },
+    {
+      "doc": "datos-personales",
+      "version": "v1.0.0",
+      "title": "Política de Tratamiento de Datos Personales",
+      "file": "policies/versions/datos-personales/v1.0.0/datos-personales.html",
+      "sha256": "2159bcf9b5291d9ed3df9bac7e0100eb0e44bb2d528cec26eed591f8be45759d",
+      "bytes": 7209,
+      "frozen_at": "2026-07-13T07:14:50+00:00",
+      "source": "datos-personales.html"
+    },
+    {
+      "doc": "terms",
+      "version": "v1.0.0",
+      "title": "Términos y Condiciones",
+      "file": "policies/versions/terms/v1.0.0/terms.html",
+      "sha256": "fff55861507c25a13e57b8963f9ea5331fc5d665b887051cd6a25df7c452fdc5",
+      "bytes": 8660,
+      "frozen_at": "2026-07-13T07:14:50+00:00",
+      "source": "terms.html"
+    }
+  ]
+}
