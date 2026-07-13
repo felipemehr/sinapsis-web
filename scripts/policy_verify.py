@@ -72,8 +72,12 @@ def verify_manifest() -> list[str]:
 
 
 def git(*args: str) -> str:
+    # encoding="utf-8" es obligatorio: sin él, en Windows subprocess decodifica
+    # la salida de git con la codificación local (cp1252) y corrompe los títulos
+    # UTF-8 del manifiesto, provocando falsos "Entrada modificada" en --against-ref.
     return subprocess.run(
-        ["git", *args], cwd=ROOT, check=True, capture_output=True, text=True
+        ["git", *args], cwd=ROOT, check=True, capture_output=True,
+        text=True, encoding="utf-8",
     ).stdout
 
 
