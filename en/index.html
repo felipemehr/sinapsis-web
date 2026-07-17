@@ -526,16 +526,47 @@
         </div>
     </footer>
 
-    <!-- Assistant (QueBot as capability) — always-visible FAB:
-         opens quebot.sinapsis.in in a new tab. Permanent fallback for the
-         embedded demo (#quebot): if the iframe ever fails at runtime,
-         this button keeps the chat reachable. DO NOT remove. -->
-    <a class="chat-fab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Open Sinapsis assistant (new tab)">
+    <!-- Site's own assistant — always-visible FAB: opens the Sinapsis chat
+         (HumanOS Web Factory, voice-enabled) in a modal. The href stays as a
+         no-JS / middle-click fallback to QueBot in a new tab. DO NOT remove. -->
+    <a class="chat-fab" id="chatFab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Open Sinapsis assistant">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Assistant</span>
     </a>
 
+    <!-- Assistant modal: our own embedded chat (grounded on Sinapsis, with
+         voice). The remote page allows this framing via CSP frame-ancestors
+         for sinapsis.in only. The iframe loads lazily on first click. -->
+    <div class="chat-modal-overlay" id="chatModalOverlay" role="dialog" aria-modal="true" aria-label="Sinapsis assistant">
+        <div class="chat-modal">
+            <div class="chat-modal-header">
+                <div class="chat-modal-title">Sinapsis Assistant<small>Answers about our services · voice-enabled</small></div>
+                <button class="chat-modal-close" id="chatModalClose" aria-label="Close assistant">✕</button>
+            </div>
+            <iframe id="chatModalFrame" title="Sinapsis assistant" data-src="https://www.humanos.eco/s/sinapsis/chat" allow="microphone; autoplay"></iframe>
+        </div>
+    </div>
+
     <script>
+        // ── Own assistant (FAB → modal with the HumanOS Web Factory chat) ──
+        (() => {
+            const fab = document.getElementById('chatFab');
+            const overlay = document.getElementById('chatModalOverlay');
+            const frame = document.getElementById('chatModalFrame');
+            const close = document.getElementById('chatModalClose');
+            if (!fab || !overlay || !frame || !close) return;
+            const open = (e) => {
+                e.preventDefault();
+                if (!frame.src) frame.src = frame.dataset.src; // lazy-load on first click
+                overlay.classList.add('active');
+            };
+            const shut = () => overlay.classList.remove('active');
+            fab.addEventListener('click', open);
+            close.addEventListener('click', shut);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) shut(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') shut(); });
+        })();
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');

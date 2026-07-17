@@ -554,14 +554,27 @@
         </div>
     </footer>
 
-    <!-- Asistente (QueBot como capacidad) — FAB siempre visible:
-         abre quebot.sinapsis.in en pestaña nueva. Es el fallback permanente
-         de la demo embebida (#quebot): si el iframe fallara en runtime,
-         este botón sigue dando acceso al chat. NO remover. -->
-    <a class="chat-fab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Abrir asistente Sinapsis (pestaña nueva)">
+    <!-- Asistente propio del sitio — FAB siempre visible: abre el chat de
+         Sinapsis (HumanOS Web Factory, con voz) en un modal. El href queda
+         como fallback (sin JS / clic con rueda abre QueBot en pestaña nueva).
+         NO remover. -->
+    <a class="chat-fab" id="chatFab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Abrir asistente Sinapsis">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Asistente</span>
     </a>
+
+    <!-- Modal del asistente: chat propio embebido (grounded en Sinapsis, con
+         voz). La página remota permite este framing vía CSP frame-ancestors
+         solo para sinapsis.in. El iframe carga recién al primer clic (lazy). -->
+    <div class="chat-modal-overlay" id="chatModalOverlay" role="dialog" aria-modal="true" aria-label="Asistente Sinapsis">
+        <div class="chat-modal">
+            <div class="chat-modal-header">
+                <div class="chat-modal-title">Asistente Sinapsis<small>Responde sobre nuestros servicios · con voz</small></div>
+                <button class="chat-modal-close" id="chatModalClose" aria-label="Cerrar asistente">✕</button>
+            </div>
+            <iframe id="chatModalFrame" title="Asistente Sinapsis" data-src="https://www.humanos.eco/s/sinapsis/chat" allow="microphone; autoplay"></iframe>
+        </div>
+    </div>
 
     <script>
         // Reveal on scroll
@@ -571,6 +584,25 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── Asistente propio (FAB → modal con chat de HumanOS Web Factory) ──
+        (() => {
+            const fab = document.getElementById('chatFab');
+            const overlay = document.getElementById('chatModalOverlay');
+            const frame = document.getElementById('chatModalFrame');
+            const close = document.getElementById('chatModalClose');
+            if (!fab || !overlay || !frame || !close) return;
+            const open = (e) => {
+                e.preventDefault();
+                if (!frame.src) frame.src = frame.dataset.src; // carga perezosa al primer clic
+                overlay.classList.add('active');
+            };
+            const shut = () => overlay.classList.remove('active');
+            fab.addEventListener('click', open);
+            close.addEventListener('click', shut);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) shut(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') shut(); });
+        })();
 
         // ── Demo QueBot embebida ─────────────────────────────────────────────
         // Habilitada 2026-07-06: quebot.sinapsis.in ya envía
