@@ -1,0 +1,16 @@
+# Integridad de evidencia de políticas
+# ------------------------------------------------------------------
+# Las copias congeladas en policies/versions/** son EVIDENCIA LEGAL:
+# su hash SHA-256 se calcula byte-a-byte (scripts abren en modo "rb").
+# Git NO debe convertir fines de línea (CRLF<->LF) en estos archivos,
+# o el hash cambiaría según el sistema operativo del checkout y la
+# verificación fallaría en falso (p. ej. en Windows con autocrlf=true).
+# "-text" fuerza tratamiento binario: los bytes en disco son idénticos
+# a los del commit en cualquier plataforma.
+policies/versions/**      -text
+
+# El manifiesto y los scripts se mantienen en LF de forma explícita
+# para que su contenido sea estable y reproducible entre plataformas.
+policies/manifest.json    text eol=lf
+scripts/*.py              text eol=lf
+scripts/*.sh              text eol=lf

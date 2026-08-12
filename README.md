@@ -11,6 +11,8 @@ Sitio estático sin build: HTML + CSS compartido en `assets/css/site.css`.
 - Páginas legales ES: `privacy`, `datos-personales`, `cookies`, `terms`, `seguridad`, `ia-responsable`, `cumplimiento`
 - Páginas legales EN: `en/privacy`, `en/terms`
 - `assets/img/` — logo y favicons derivados del kit oficial; `og-image.png` para redes
+- `policies/` — versiones congeladas de documentos legales con hashes y sellado de tiempo (ver `policies/README.md`)
+- `docs/consent-evidence-design.md` — diseño del registro verificable de consentimientos NNA (backend HumanOS)
 
 ## Notas
 

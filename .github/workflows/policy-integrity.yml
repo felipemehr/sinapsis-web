@@ -1,0 +1,27 @@
+name: policy-integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'policies/**'
+      - 'scripts/policy_*.py'
+  pull_request:
+    paths:
+      - 'policies/**'
+      - 'scripts/policy_*.py'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verificar hashes del manifiesto
+        run: python3 scripts/policy_verify.py
+
+      - name: Verificar inmutabilidad contra la rama base (PRs)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/policy_verify.py --against-ref "origin/${{ github.base_ref }}"
