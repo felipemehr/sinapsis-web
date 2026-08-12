@@ -1,0 +1,59 @@
+# Detecta drift entre las páginas legales publicadas acá y el canon legal
+# (humanos-eco/content/legal/manifest.json). Las páginas se GENERAN desde el
+# canon con `npm run legal:render` en humanos-eco — editar el HTML a mano acá
+# siempre es un error, y este workflow lo hace visible.
+name: policy-drift
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "privacy.html"
+      - "terms.html"
+      - "en/privacy.html"
+      - "en/terms.html"
+  schedule:
+    - cron: "17 6 * * 1" # lunes 06:17 UTC — caza drift aunque nadie pushee
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comparar policy-integrity contra el manifest del canon
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys, urllib.request
+
+          MANIFEST_URL = "https://raw.githubusercontent.com/felipemehr/humanos-eco/main/content/legal/manifest.json"
+          PAGES = {
+              ("privacy", "es"): "privacy.html",
+              ("terms", "es"): "terms.html",
+              ("privacy", "en"): "en/privacy.html",
+              ("terms", "en"): "en/terms.html",
+          }
+
+          manifest = json.load(urllib.request.urlopen(MANIFEST_URL))
+          def latest(doc, lang):
+              es = [e for e in manifest["entries"] if e["doc"] == doc and e["lang"] == lang]
+              return es[-1] if es else None
+
+          errors = 0
+          for (doc, lang), path in PAGES.items():
+              html = open(path, encoding="utf-8").read()
+              m = re.search(r'name="policy-integrity" content="([\w-]+)/(\w+) v([\d.]+) sha256:([0-9a-f]+)"', html)
+              if not m:
+                  print(f"DRIFT · {path}: sin meta policy-integrity (¿editado a mano?)"); errors += 1; continue
+              got = {"doc": m[1], "lang": m[2], "version": m[3], "sha256": m[4]}
+              want = latest(doc, lang)
+              if not want:
+                  print(f"DRIFT · {path}: el canon no tiene entradas para {doc}/{lang}"); errors += 1; continue
+              if got["version"] != want["version"] or got["sha256"] != want["sha256"]:
+                  print(f"DRIFT · {path}: página v{got['version']} ({got['sha256'][:12]}…) vs canon v{want['version']} ({want['sha256'][:12]}…)")
+                  print("  Regenerar con `npm run legal:render` en humanos-eco y commitear acá por PR.")
+                  errors += 1
+              else:
+                  print(f"OK · {path} = canon {doc}/{lang} v{want['version']}")
+          sys.exit(1 if errors else 0)
+          EOF
