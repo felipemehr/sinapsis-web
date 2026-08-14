@@ -10,8 +10,18 @@ on:
     paths:
       - "privacy.html"
       - "terms.html"
+      - "datos-personales.html"
+      - "cookies.html"
+      - "seguridad.html"
+      - "ia-responsable.html"
+      - "cumplimiento.html"
       - "en/privacy.html"
       - "en/terms.html"
+      - "en/personal-data.html"
+      - "en/cookies.html"
+      - "en/security.html"
+      - "en/responsible-ai.html"
+      - "en/compliance.html"
   schedule:
     - cron: "17 6 * * 1" # lunes 06:17 UTC — caza drift aunque nadie pushee
   workflow_dispatch:
@@ -30,8 +40,18 @@ jobs:
           PAGES = {
               ("privacy", "es"): "privacy.html",
               ("terms", "es"): "terms.html",
+              ("datos-personales", "es"): "datos-personales.html",
+              ("cookies", "es"): "cookies.html",
+              ("seguridad", "es"): "seguridad.html",
+              ("ia-responsable", "es"): "ia-responsable.html",
+              ("cumplimiento", "es"): "cumplimiento.html",
               ("privacy", "en"): "en/privacy.html",
               ("terms", "en"): "en/terms.html",
+              ("datos-personales", "en"): "en/personal-data.html",
+              ("cookies", "en"): "en/cookies.html",
+              ("seguridad", "en"): "en/security.html",
+              ("ia-responsable", "en"): "en/responsible-ai.html",
+              ("cumplimiento", "en"): "en/compliance.html",
           }
 
           manifest = json.load(urllib.request.urlopen(MANIFEST_URL))
