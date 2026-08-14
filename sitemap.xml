@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://sinapsis.in/privacy.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/privacy.html"/>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://sinapsis.in/terms.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/terms.html"/>
@@ -37,39 +37,91 @@
   </url>
   <url>
     <loc>https://sinapsis.in/datos-personales.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/datos-personales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/personal-data.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/cumplimiento.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/cumplimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/compliance.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/ia-responsable.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/ia-responsable.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/responsible-ai.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/seguridad.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/seguridad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/security.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/cookies.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/cookies.html"/>
+  </url>
+  <url>
+    <loc>https://sinapsis.in/en/personal-data.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/datos-personales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/personal-data.html"/>
+  </url>
+  <url>
+    <loc>https://sinapsis.in/en/compliance.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/cumplimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/compliance.html"/>
+  </url>
+  <url>
+    <loc>https://sinapsis.in/en/responsible-ai.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/ia-responsable.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/responsible-ai.html"/>
+  </url>
+  <url>
+    <loc>https://sinapsis.in/en/security.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/seguridad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/security.html"/>
+  </url>
+  <url>
+    <loc>https://sinapsis.in/en/cookies.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/cookies.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/en/privacy.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/privacy.html"/>
   </url>
   <url>
     <loc>https://sinapsis.in/descubre.html</loc>
@@ -79,8 +131,10 @@
   </url>
   <url>
     <loc>https://sinapsis.in/en/terms.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sinapsis.in/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sinapsis.in/en/terms.html"/>
   </url>
 </urlset>

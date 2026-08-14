@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Seguridad de la Información — Sinapsis SpA</title>
     <meta name="description" content="Política de Seguridad de la Información de Sinapsis SpA: principios, controles, gestión de incidentes y continuidad operacional.">
+    <meta name="robots" content="index,follow">
+    <meta name="policy-integrity" content="seguridad/es v2.0.0 sha256:fe499204a26020f5bd5da5766178d6ad6f3af97e4b1f523aa67808255e84f121">
     <link rel="canonical" href="https://sinapsis.in/seguridad">
+    <link rel="alternate" hreflang="en" href="https://sinapsis.in/en/security">
+    <link rel="alternate" hreflang="es" href="https://sinapsis.in/seguridad">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,71 +25,59 @@
         </a>
         <ul class="nav-links" style="display:flex;">
             <li><a href="/">← Volver al inicio</a></li>
+            <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/security">EN</a></li>
         </ul>
     </nav>
 
     <main class="legal-content">
         <h1>Política de Seguridad de la Información</h1>
-        <p class="last-updated">Última actualización: 5 de julio de 2026</p>
-
-        <div class="legal-notice">
-            Este documento es una versión corporativa inicial y debe ser revisado por asesoría
-            legal antes de considerarse definitivo.
-        </div>
-
+        <p><strong>Última actualización: 14 de agosto de 2026 · Versión 2.0.0</strong></p>
         <h2>1. Objetivo y alcance</h2>
-        <p>Esta política define los principios con que Sinapsis SpA protege la confidencialidad,
-        integridad y disponibilidad de la información propia, de clientes y de usuarios, en todos los
-        Servicios que opera. Tomamos como referencia la norma ISO/IEC 27001 y la Ley N° 21.663
-        (Ley Marco de Ciberseguridad) como criterios de diseño; esta referencia no implica
-        certificación formal salvo que se indique expresamente.</p>
-
+        <p>Esta política define los principios y controles con que <strong>Sinapsis SpA</strong> protege la <strong>confidencialidad, integridad y disponibilidad</strong> de la información propia, de clientes y de usuarios, en todos los servicios que opera: sinapsis.in, la plataforma HumanOS (humanos.eco, empresa.eco, estudiante.humanos.eco), el asistente QueBot y los proyectos de consultoría. Tomamos como criterios de diseño la norma <strong>ISO/IEC 27001</strong> y la <strong>Ley N° 21.663</strong> (Ley Marco de Ciberseguridad); esta referencia <strong>no implica certificación formal</strong> salvo que se indique expresamente (ver <a href="https://sinapsis.in/cumplimiento" target="_blank" rel="noopener">Aviso de Cumplimiento</a>).</p>
         <h2>2. Principios</h2>
         <ul>
-            <li><strong>Mínimo privilegio:</strong> cada persona y sistema accede solo a la información que necesita para su función.</li>
-            <li><strong>Seguridad desde el diseño:</strong> los controles se definen al diseñar la solución, no después de construirla.</li>
-            <li><strong>Defensa en profundidad:</strong> múltiples capas de control en infraestructura, aplicación y datos.</li>
-            <li><strong>Trazabilidad:</strong> los accesos y cambios relevantes quedan registrados.</li>
-            <li><strong>Mejora continua:</strong> los controles se revisan y ajustan periódicamente.</li>
+        <li><strong>Mínimo privilegio:</strong> cada persona y sistema accede solo a la información que necesita para su función.</li>
+        <li><strong>Seguridad desde el diseño:</strong> los controles se definen al diseñar la solución, no después de construirla.</li>
+        <li><strong>Defensa en profundidad:</strong> múltiples capas de control en infraestructura, aplicación y datos.</li>
+        <li><strong>Trazabilidad:</strong> los accesos y cambios relevantes quedan registrados.</li>
+        <li><strong>Mejora continua:</strong> los controles se revisan y ajustan periódicamente.</li>
         </ul>
-
         <h2>3. Controles principales</h2>
+        <p>Medidas técnicas y organizativas vigentes:</p>
         <ul>
-            <li>Cifrado de comunicaciones mediante HTTPS/TLS.</li>
-            <li>Gestión de credenciales y tokens en almacenes seguros; prohibición de secretos en código fuente.</li>
-            <li>Control de acceso basado en roles y revisión de permisos.</li>
-            <li>Separación de entornos de desarrollo, prueba y producción.</li>
-            <li>Respaldos periódicos de información esencial y pruebas de restauración.</li>
-            <li>Actualización y parchado de componentes de software.</li>
+        <li>Cifrado <strong>TLS/HTTPS</strong> en todas las comunicaciones y cifrado en reposo en la base de datos.</li>
+        <li><strong>Cifrado adicional AES-256-GCM a nivel de campo</strong> para datos sensibles de salud (RUT, diagnósticos, alergias, notas clínicas).</li>
+        <li><strong>Registro de auditoría clínica inalterable</strong> para todo acceso a fichas de salud.</li>
+        <li>Control de acceso basado en roles, <strong>mínimo privilegio</strong> y aislamiento por usuario y organización (multi-tenant).</li>
+        <li>Autenticación con Google OAuth 2.0; gestión de credenciales, tokens y secretos en almacenes seguros, con <strong>prohibición de secretos en el código fuente</strong>.</li>
+        <li>Consultas parametrizadas (ORM) contra inyección; cabeceras de seguridad y CSP.</li>
+        <li>Separación de entornos de desarrollo, prueba y producción.</li>
+        <li>Respaldos periódicos de la información esencial y pruebas de restauración.</li>
+        <li>Actualización y parchado de componentes de software.</li>
         </ul>
-
         <h2>4. Gestión de incidentes</h2>
-        <p>Mantenemos un procedimiento de gestión de incidentes de seguridad tomando como referencia
-        ISO/IEC 27035:</p>
+        <p>Mantenemos un procedimiento de gestión de incidentes de seguridad tomando como referencia <strong>ISO/IEC 27035</strong>:</p>
         <ol>
-            <li><strong>Detección y reporte:</strong> cualquier evento sospechoso puede reportarse a <a href="mailto:admin@sinapsis.in?subject=Reporte%20de%20seguridad">admin@sinapsis.in</a>.</li>
-            <li><strong>Evaluación y contención:</strong> clasificamos el incidente y limitamos su alcance.</li>
-            <li><strong>Notificación:</strong> si el incidente afecta datos personales, notificamos a la autoridad y a los titulares cuando corresponda, conforme a la normativa aplicable.</li>
-            <li><strong>Recuperación y lecciones aprendidas:</strong> restauramos el servicio y ajustamos controles.</li>
+        <li><strong>Detección y reporte:</strong> cualquier evento sospechoso puede reportarse a <a href="mailto:admin@sinapsis.in?subject=Reporte%20de%20seguridad">admin@sinapsis.in</a>.</li>
+        <li><strong>Evaluación y contención:</strong> clasificamos el incidente, limitamos su alcance y registramos la evidencia.</li>
+        <li><strong>Notificación:</strong> si el incidente afecta datos personales y genera riesgo para los titulares, <strong>notificamos a la Agencia de Protección de Datos Personales y a los afectados sin dilación indebida</strong>, conforme a la <a href="/privacy">Política de Privacidad</a>.</li>
+        <li><strong>Recuperación y lecciones aprendidas:</strong> restauramos el servicio y ajustamos controles.</li>
         </ol>
-
         <h2>5. Continuidad operacional</h2>
-        <p>Identificamos procesos críticos y mantenemos planes de contingencia y recuperación, tomando
-        como referencia ISO 22301. Diseñamos las soluciones orientadas a resiliencia y recuperación rápida.</p>
-
+        <p>Identificamos procesos críticos y mantenemos planes de contingencia y recuperación, tomando como referencia <strong>ISO 22301</strong>. Diseñamos las soluciones orientadas a resiliencia y recuperación rápida.</p>
         <h2>6. Proveedores</h2>
-        <p>Evaluamos la seguridad de los proveedores que procesan información por cuenta nuestra y
-        exigimos compromisos de confidencialidad y seguridad coherentes con esta política.</p>
-
+        <p>Evaluamos la seguridad de los proveedores que procesan información por cuenta nuestra y exigimos compromisos contractuales de confidencialidad, seguridad y uso limitado a nuestras instrucciones. El listado de encargados vigentes está en la <a href="/privacy">Política de Privacidad</a>, sección 11.</p>
         <h2>7. Divulgación responsable</h2>
-        <p>Si descubres una vulnerabilidad en nuestros Servicios, te pedimos reportarla de forma
-        responsable a <a href="mailto:admin@sinapsis.in?subject=Vulnerabilidad%20-%20Divulgaci%C3%B3n%20responsable">admin@sinapsis.in</a>
-        antes de divulgarla públicamente. Nos comprometemos a responder y a no ejercer acciones contra
-        investigaciones de buena fe.</p>
-
-        <h2>8. Revisión</h2>
-        <p>Esta política se revisa al menos una vez al año o ante cambios significativos en los
-        Servicios o en la regulación.</p>
+        <p>Si descubres una vulnerabilidad en nuestros servicios, te pedimos reportarla de forma responsable a <a href="mailto:admin@sinapsis.in?subject=Vulnerabilidad%20-%20Divulgaci%C3%B3n%20responsable">admin@sinapsis.in</a> antes de divulgarla públicamente. Nos comprometemos a responder y a no ejercer acciones contra investigaciones de buena fe.</p>
+        <h2>8. Mejora continua</h2>
+        <p>Mantenemos un plan de mejora por fases, que incluye autenticación de dos factores (2FA), exportación de datos en formatos portables, preparación para SOC 2 y pruebas de penetración externas. Alineamos nuestro sistema de gestión con ISO/IEC 27001 e ISO/IEC 27701 como marcos de referencia; la adopción formal de certificaciones se informará públicamente.</p>
+        <h2>9. Revisión</h2>
+        <p>Esta política se revisa al menos una vez al año o ante cambios significativos en los servicios o en la regulación. Cada versión se publica <strong>congelada y verificable por huella SHA-256</strong>, igual que el resto de nuestros documentos legales.</p>
+        <h2>10. Contacto</h2>
+        <ul>
+        <li><strong>Reportes de seguridad:</strong> <a href="mailto:admin@sinapsis.in?subject=Reporte%20de%20seguridad">admin@sinapsis.in</a></li>
+        <li><strong>Empresa:</strong> Sinapsis SpA (RUT 78.327.684-4), San Martín 924, Oficina 213, Temuco, Chile</li>
+        </ul>
 
         <nav class="legal-footer-nav" aria-label="Documentos legales">
             <a href="/privacy">Privacidad</a>
