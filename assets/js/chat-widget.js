@@ -32,7 +32,7 @@
 
   const host = document.createElement("div");
   host.innerHTML =
-    '<a class="chat-fab" id="chatFab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="' + T.open + '">' +
+    '<a class="chat-fab" id="chatFab" href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener" aria-label="' + T.open + '">' +
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
     "<span>" + T.label + "</span>" +
     "</a>" +

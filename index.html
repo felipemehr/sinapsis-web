@@ -327,7 +327,7 @@
                 <div class="browser-card">
                     <div class="browser-card-head">
                         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                        <span>quebot.sinapsis.in — demo</span>
+                        <span>www.humanos.eco/s/sinapsis/chat — asistente en vivo</span>
                     </div>
                     <div id="quebotEmbedSlot">
                         <div class="quebot-fallback" id="quebotFallback">
@@ -336,7 +336,7 @@
                                 Conversa con QueBot: consultas en lenguaje natural sobre normativa,
                                 documentos y datos públicos, con respuestas apoyadas en evidencia.
                             </p>
-                            <a href="https://quebot.sinapsis.in" target="_blank" rel="noopener" class="btn btn-outline">Abrir QueBot completo →</a>
+                            <a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener" class="btn btn-outline">Abrir el asistente →</a>
                         </div>
                     </div>
                 </div>
@@ -550,7 +550,7 @@
                 <ul>
                     <li><a href="/descubre">Descubre — diagnóstico instantáneo</a></li>
                     <li><a href="https://www.humanos.eco" target="_blank" rel="noopener">humanos.eco</a></li>
-                    <li><a href="https://quebot.sinapsis.in" target="_blank" rel="noopener">QueBot (asistente especializado)</a></li>
+                    <li><a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener">Asistente Sinapsis (QueBot)</a></li>
                     <li><a href="mailto:admin@sinapsis.in?subject=Demo%20HumanOS">Solicitar demo</a></li>
                 </ul>
             </div>
@@ -590,23 +590,23 @@
         // (El asistente FAB+modal vive en /assets/js/chat-widget.js — común a
         // todas las páginas.)
 
-        // ── Demo QueBot embebida ─────────────────────────────────────────────
-        // Habilitada 2026-07-06: quebot.sinapsis.in ya envía
-        // frame-ancestors 'self' https://sinapsis.in https://www.sinapsis.in
-        // (merge 2830893 en el repo QueBot). Si QueBot volviera a bloquear
-        // framing, volver a false restaura el fallback sobrio.
+        // ── Asistente embebido (HumanOS en GCP) ─────────────────────────────
+        // 2026-08-18: apunta al asistente servido por Cloud Run
+        // (www.humanos.eco/s/sinapsis/chat). Su CSP ya permite frame-ancestors
+        // sinapsis.in/www.sinapsis.in (verificado en vivo). Si volviera a
+        // bloquear framing, volver a false restaura el fallback sobrio.
         const QUEBOT_EMBED = true;
         if (QUEBOT_EMBED) {
             const slot = document.getElementById('quebotEmbedSlot');
             const frame = document.createElement('iframe');
-            frame.src = 'https://quebot.sinapsis.in/';
-            frame.title = 'Demo QueBot';
+            frame.src = 'https://www.humanos.eco/s/sinapsis/chat';
+            frame.title = 'Asistente Sinapsis';
             frame.loading = 'lazy';
             frame.className = 'quebot-embed';
             slot.replaceChildren(frame);
             // Altura dinámica opcional via postMessage desde QueBot.
             window.addEventListener('message', (e) => {
-                if (e.origin !== 'https://quebot.sinapsis.in') return;
+                if (e.origin !== 'https://www.humanos.eco') return;
                 const h = Number(e.data && e.data.quebotHeight);
                 if (h > 300 && h < 2000) frame.style.height = h + 'px';
             });

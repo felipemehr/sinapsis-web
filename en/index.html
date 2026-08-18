@@ -298,7 +298,7 @@
                 <div class="browser-card">
                     <div class="browser-card-head">
                         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                        <span>quebot.sinapsis.in — demo</span>
+                        <span>www.humanos.eco/s/sinapsis/chat — live assistant</span>
                     </div>
                     <div id="quebotEmbedSlot">
                         <div class="quebot-fallback" id="quebotFallback">
@@ -307,7 +307,7 @@
                                 Chat with QueBot: natural-language queries over regulations,
                                 documents and public data, with evidence-backed answers.
                             </p>
-                            <a href="https://quebot.sinapsis.in" target="_blank" rel="noopener" class="btn btn-outline">Open full QueBot →</a>
+                            <a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener" class="btn btn-outline">Open the assistant →</a>
                         </div>
                     </div>
                 </div>
@@ -521,7 +521,7 @@
                 <ul>
                     <li><a href="https://www.humanos.eco/descubre?utm_source=sinapsis-web-en&utm_medium=referral&utm_campaign=descubre" target="_blank" rel="noopener">Descubre — instant diagnosis (ES)</a></li>
                     <li><a href="https://www.humanos.eco" target="_blank" rel="noopener">humanos.eco</a></li>
-                    <li><a href="https://quebot.sinapsis.in" target="_blank" rel="noopener">QueBot (specialized assistant)</a></li>
+                    <li><a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener">Sinapsis Assistant (QueBot)</a></li>
                     <li><a href="mailto:admin@sinapsis.in?subject=HumanOS%20demo">Request a demo</a></li>
                 </ul>
             </div>
@@ -547,7 +547,7 @@
     <!-- Site's own assistant — always-visible FAB: opens the Sinapsis chat
          (HumanOS Web Factory, voice-enabled) in a modal. The href stays as a
          no-JS / middle-click fallback to QueBot in a new tab. DO NOT remove. -->
-    <a class="chat-fab" id="chatFab" href="https://quebot.sinapsis.in" target="_blank" rel="noopener" aria-label="Open Sinapsis assistant">
+    <a class="chat-fab" id="chatFab" href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener" aria-label="Open Sinapsis assistant">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span>Assistant</span>
     </a>
@@ -593,18 +593,18 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // QueBot embedded demo — enabled 2026-07-06 (frame-ancestors allowlist
-        // live on quebot.sinapsis.in). Flip to false to restore the fallback.
+        // served from www.humanos.eco on Cloud Run). Flip to false to restore the fallback.
         const QUEBOT_EMBED = true;
         if (QUEBOT_EMBED) {
             const slot = document.getElementById('quebotEmbedSlot');
             const frame = document.createElement('iframe');
-            frame.src = 'https://quebot.sinapsis.in/';
+            frame.src = 'https://www.humanos.eco/s/sinapsis/chat';
             frame.title = 'QueBot demo';
             frame.loading = 'lazy';
             frame.className = 'quebot-embed';
             slot.replaceChildren(frame);
             window.addEventListener('message', (e) => {
-                if (e.origin !== 'https://quebot.sinapsis.in') return;
+                if (e.origin !== 'https://www.humanos.eco') return;
                 const h = Number(e.data && e.data.quebotHeight);
                 if (h > 300 && h < 2000) frame.style.height = h + 'px';
             });
