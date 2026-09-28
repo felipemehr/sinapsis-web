@@ -6,7 +6,7 @@
     <title>Privacy Policy — Sinapsis SpA</title>
     <meta name="description" content="Sinapsis SpA Privacy Policy: what data we process, why, how we protect it and how to exercise your rights.">
     <meta name="robots" content="index,follow">
-    <meta name="policy-integrity" content="privacy/en v2.0.0 sha256:89309c7d0f631291576e7b42f43728a864ddd0495c66a5f09ddaafc44d00755f">
+    <meta name="policy-integrity" content="privacy/en v2.1.5 sha256:cddf70bb9dbe912d5877e35ac82adee30193f8740cd0eb16d212a3303f27afd6">
     <link rel="canonical" href="https://sinapsis.in/en/privacy">
     <link rel="alternate" hreflang="es" href="https://sinapsis.in/privacy">
     <link rel="alternate" hreflang="en" href="https://sinapsis.in/en/privacy">
@@ -31,7 +31,7 @@
 
     <main class="legal-content">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated: August 12, 2026 · Version 2.0.0</strong></p>
+        <p><strong>Last updated: September 27, 2026 · Version 2.1.5</strong></p>
         <p>This policy describes how <strong>Sinapsis SpA</strong> ("Sinapsis", "we") processes personal data across all of its sites and services (the "Services"):</p>
         <div class="legal-table-wrap">
         <table class="legal-table">
@@ -81,7 +81,7 @@
         <tr><td>Identification and contact</td><td>Name, email, profile photo (Google OAuth)</td><td>User account, communication</td></tr>
         <tr><td>Personal and family data</td><td>Phone, address, family members, dependents</td><td>Personal/family organization features</td></tr>
         <tr><td>Health data (sensitive)</td><td>Medications, appointments, records in Care/Health modules</td><td>Only with explicit consent; Annex A</td></tr>
-        <tr><td>Well-being data</td><td>Mood, energy and stress check-ins</td><td>Personal trends and insights; never shared</td></tr>
+        <tr><td>Well-being data</td><td>Mood, energy and stress check-ins</td><td>Personal trends and insights; not handed to third parties, but they may travel in the assistant's context</td></tr>
         <tr><td>Financial data</td><td>Recorded payments, obligations, payables</td><td>Personal/business financial control</td></tr>
         <tr><td>Business data</td><td>Organizations, roles, KPIs, risks, compliance</td><td>Business management (Annex B)</td></tr>
         <tr><td>Academic data (minors)</td><td>Grades, subjects, assignments, goals</td><td>Student module (Annex C)</td></tr>
@@ -124,7 +124,10 @@
         <h2>8. Artificial intelligence</h2>
         <ul>
         <li>We use <strong>Anthropic (Claude)</strong> models to generate assistant responses (QueBot and HumanOS AI features).</li>
-        <li>Before sending text to the AI provider, a <strong>PII scrubber</strong> automatically removes direct identifiers (national ID, phone numbers, emails, addresses) when the feature does not require them.</li>
+        <li>In the <strong>conversational chat</strong>, before sending <strong>the text messages you write</strong> to the AI provider, a <strong>PII scrubber</strong> replaces the identifiers it recognizes: the Chilean RUT, tax identifiers from other countries, phone numbers, email addresses, payment card numbers, IBANs and IP addresses. <strong>It recognizes formats, not intentions</strong>: an identifier written in an unusual way may go undetected.</li>
+        <li><strong>That scrubbing does not cover every path, and you should know it before you type.</strong> It does not apply <strong>when you attach a file</strong> — neither to the file nor to the message that accompanies it, because reading it whole is precisely what you need — and it does <strong>not</strong> apply <strong>when your text goes to the agent features</strong> that plan or carry out tasks for you: there it travels exactly as you wrote it. The practical rule, and the only one that does not go stale as we add features, is this: <strong>assume anything you write may reach the provider as it is</strong>.</li>
+        <li><strong>Your own identity does travel in the assistant's context.</strong> So that QueBot can fill in a form, draft a document or cite you correctly without you having to dictate your details in every conversation, its context includes <strong>your name and your RUT</strong> (Chilean national ID) and — when you work at a company — <strong>that company's RUT and legal name</strong>. This is <strong>your</strong> data, in a session already authenticated as yours.</li>
+        <li><strong>The assistant's context does not include the RUT field of another person whose file you are viewing.</strong> If you are a guardian reviewing your student, that field does not travel. This does <strong>not</strong> mean no identifier of theirs can appear: a RUT written inside free text — in that person's biography, for instance — travels along with that text. Nor does it extend to what you ask the assistant to do: if you request work involving a third party's data — drafting a rental agreement, for example — it receives the data needed to carry it out, including that person's identifier.</li>
         <li><strong>Your data is not used to train</strong> our or third parties' AI models.</li>
         <li>AI responses are <strong>for guidance only</strong>: they are not legal, financial, medical or other professional advice. See our <a href="https://sinapsis.in/ia-responsable" target="_blank" rel="noopener">Responsible AI Policy</a>.</li>
         </ul>
@@ -139,7 +142,7 @@
         <h2>10. Children and adolescents</h2>
         <p>The HumanOS <strong>Student</strong> module may be used by minors under 18 <strong>only</strong> under these conditions (detail in Annex C):</p>
         <ul>
-        <li>Sign-up and linking require the <strong>consent of a parent or responsible adult</strong>, who keeps visibility over academic progress.</li>
+        <li>Sign-up and linking require the <strong>consent of a parent or responsible adult</strong>, who can see upcoming assessments, projects and alerts, as described in Annex C.</li>
         <li>We process the <strong>minimum data necessary</strong> for the educational purpose, guided by the <strong>best interests of the child</strong>.</li>
         <li>We <strong>never</strong> use minors' data for advertising or commercial profiling, nor disclose it to third parties.</li>
         <li>The responsible adult may revoke consent and request deletion of the minor's data at any time.</li>
@@ -152,15 +155,17 @@
         <table class="legal-table">
         <tr><th>Processor</th><th>Role</th><th>Location</th></tr>
         <tr><td>Google Cloud Platform</td><td>Application and database hosting (Cloud Run / Cloud SQL, us-central1 region)</td><td>USA</td></tr>
-        <tr><td>Anthropic</td><td>AI query processing (after PII scrubbing)</td><td>USA</td></tr>
+        <tr><td>Anthropic</td><td>AI query processing (with the scrubbing and its limits described in section 8)</td><td>USA</td></tr>
         <tr><td>Google (OAuth / Calendar)</td><td>Authentication and authorized agenda integration</td><td>USA</td></tr>
         <tr><td>Railway</td><td>Secondary services infrastructure in transition to Google Cloud</td><td>USA</td></tr>
         <tr><td>Meta / WhatsApp</td><td>Messaging channel when you use QueBot via WhatsApp (Annex D)</td><td>USA</td></tr>
+        <tr><td>Resend</td><td>Sending account emails (confirmation, invitations and notices)</td><td>USA</td></tr>
+        <tr><td>ElevenLabs</td><td>Text-to-speech of the tutor's answer when the "Escuchar" (Listen) button is used</td><td>USA</td></tr>
         </table>
         </div>
         <p>We may also disclose information <strong>where required by law</strong> or by order of a competent authority, notifying you unless legally prohibited.</p>
         <h2>12. International transfers</h2>
-        <p>The processors listed above process data outside Chile (mainly in the USA). Where this happens we apply adequate safeguards: <strong>contractual clauses</strong> with protection standards equivalent to this policy, <strong>prior minimization</strong> (PII scrubbing toward AI), encryption in transit and at rest, and vendor assessment. We keep the processor list in this policy up to date.</p>
+        <p>The processors listed above process data outside Chile (mainly in the USA). Where this happens we apply adequate safeguards: <strong>contractual clauses</strong> with protection standards equivalent to this policy, <strong>prior minimization</strong> toward the AI — with the scope and limits described in section 8, which does not cover every path —, encryption in transit and at rest, and vendor assessment. We keep the processor list in this policy up to date.</p>
         <h2>13. Retention</h2>
         <div class="legal-table-wrap">
         <table class="legal-table">
@@ -192,7 +197,7 @@
         <ul>
         <li><strong>TLS/HTTPS</strong> encryption for all communications and encryption at rest in the database.</li>
         <li>Additional <strong>field-level AES-256-GCM encryption</strong> for sensitive health data (national ID, diagnoses, allergies, clinical notes).</li>
-        <li><strong>Tamper-evident clinical audit log</strong> for every access to health records.</li>
+        <li><strong>Tamper-evident clinical audit log</strong> for every access to health records: if someone altered an entry, the log reveals it; that is not the same as physically preventing the change.</li>
         <li><strong>Least-privilege</strong> access control and per-user, per-organization isolation (multi-tenant).</li>
         <li>Google OAuth 2.0 authentication; secure secret and token management.</li>
         <li>Parameterized queries (ORM) against injection; security headers and CSP.</li>
@@ -216,13 +221,18 @@
         </ul>
         <hr>
         <h2>Annex A — HumanOS Personal &amp; Family (humanos.eco)</h2>
-        <p>Modules for personal life, family, health (Care/Health), well-being, personal finance, agenda and documents. Specifics: <strong>health data</strong> is processed only with express consent and field-level encryption (section 15); <strong>well-being check-ins</strong> generate trends for you only and are never shared; the <strong>Google Calendar</strong> integration is optional and revocable.</p>
+        <p>Modules for personal life, family, health (Care/Health), well-being, personal finance, agenda and documents. Specifics: <strong>health data</strong> is processed only with express consent and field-level encryption (section 15); <strong>well-being check-ins</strong> generate trends for you only and are not handed to third parties — though they may travel in the assistant's context, like the rest of your data; the <strong>Google Calendar</strong> integration is optional and revocable.</p>
         <h2>Annex B — HumanOS Business (empresa.eco)</h2>
         <p>When an organization uses HumanOS, the organization decides which business data it loads (KPIs, risks, compliance, teams). For the personal data of its members, the organization acts as <strong>controller</strong> and Sinapsis as <strong>processor</strong> under the service agreement; multi-tenant isolation prevents access across organizations.</p>
         <h2>Annex C — HumanOS Student (estudiante.humanos.eco)</h2>
-        <p>Use by minors with the <strong>consent of the responsible adult</strong> (section 10): minimal academic data (grades, subjects, assignments, goals), parental visibility of progress, zero advertising and zero profiling. The exact consent text accepted is recorded through the verifiable versioning described in section 19.</p>
+        <p>Use by minors with the <strong>consent of the responsible adult</strong> (section 10). Enrollment is done by the parent or legal guardian: they state their capacity, accept the informed consent, confirm their email and, after a manual review, <strong>confirm the consent from their own account</strong>. The student accepts their own terms when activating their account. The version and SHA-256 fingerprint of every accepted text are recorded (section 19).</p>
+        <p><strong>Data:</strong> the minimum needed for the educational purpose (subjects, assessments, assignments, goals and the grades the student records), with zero advertising and zero profiling.</p>
+        <p><strong>What the responsible adult sees:</strong> upcoming tests and assignments, projects and alerts. They <strong>do not see</strong> conversations with the tutor, materials, flashcards, study sessions or grades. The student can additionally hide any of the visible categories.</p>
+        <p><strong>Email:</strong> account notices only and, to the student, reminders of upcoming tests (title and subject); never grades, conversations or documents of the student.</p>
+        <p><strong>Withdrawal and deletion:</strong> the responsible adult can withdraw consent from their account; their access is cut immediately and the student's account is suspended. If they request deletion, we respond within 2 business days and delete the student's account and data within 30 days. When the pilot ends we give at least 30 days' notice by email; unless we are asked to keep the account, we delete it together with its data within 30 days after the end of the pilot.</p>
+        <p><strong>Artificial intelligence:</strong> what the student writes or uploads is processed only with the AI provider declared in section 11 (Anthropic); it is not sent to other AI providers or to local machines. If the student uses "Escuchar" (Listen), the tutor's answer is converted to speech with ElevenLabs. Voice dictation uses the browser's speech recognition; in Chrome, the audio is processed by Google under its own terms.</p>
         <h2>Annex D — QueBot via WhatsApp</h2>
-        <p>If you use QueBot through WhatsApp, <strong>Meta/WhatsApp</strong> processes the channel metadata (your number, message timing) under its own policies; the content QueBot processes follows this policy (AI with PII scrubbing, section 8). If you prefer not to expose metadata to WhatsApp, you can use QueBot inside the web platform.</p>
+        <p>If you use QueBot through WhatsApp, <strong>Meta/WhatsApp</strong> processes the channel metadata (your number, message timing) under its own policies; the content QueBot processes follows this policy (AI with the scrubbing and its limits described in section 8). If you prefer not to expose metadata to WhatsApp, you can use QueBot inside the web platform.</p>
 
         <nav class="legal-footer-nav" aria-label="Legal documents">
             <a href="/en/privacy">Privacy</a>
