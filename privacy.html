@@ -6,7 +6,7 @@
     <title>Política de Privacidad — Sinapsis SpA</title>
     <meta name="description" content="Política de Privacidad de Sinapsis SpA: qué datos tratamos, con qué finalidades, cómo los protegemos y cómo ejercer tus derechos.">
     <meta name="robots" content="index,follow">
-    <meta name="policy-integrity" content="privacy/es v2.0.0 sha256:0e21de553ee92931878c50b8ab1c569ef699e440686fd6a58c6b3cd1574f88d3">
+    <meta name="policy-integrity" content="privacy/es v2.1.5 sha256:3c4cf6c735557fa44b558c217f7022ca434eecf6c262d04b18596d5901b2e4c8">
     <link rel="canonical" href="https://sinapsis.in/privacy">
     <link rel="alternate" hreflang="en" href="https://sinapsis.in/en/privacy">
     <link rel="alternate" hreflang="es" href="https://sinapsis.in/privacy">
@@ -31,7 +31,7 @@
 
     <main class="legal-content">
         <h1>Política de Privacidad</h1>
-        <p><strong>Última actualización: 12 de agosto de 2026 · Versión 2.0.0</strong></p>
+        <p><strong>Última actualización: 27 de septiembre de 2026 · Versión 2.1.5</strong></p>
         <p>Esta política describe cómo <strong>Sinapsis SpA</strong> ("Sinapsis", "nosotros") trata los datos personales en todos sus sitios y servicios (los "Servicios"):</p>
         <div class="legal-table-wrap">
         <table class="legal-table">
@@ -81,7 +81,7 @@
         <tr><td>Identificación y contacto</td><td>Nombre, correo, foto de perfil (Google OAuth)</td><td>Cuenta de usuario, comunicación</td></tr>
         <tr><td>Datos personales y familiares</td><td>Teléfono, dirección, miembros de familia, dependientes</td><td>Funciones de organización personal/familiar</td></tr>
         <tr><td>Datos de salud (sensibles)</td><td>Medicamentos, citas, fichas de los módulos Care y Salud</td><td>Solo con consentimiento explícito; anexo A</td></tr>
-        <tr><td>Datos de bienestar</td><td>Check-ins de ánimo, energía, estrés</td><td>Tendencias e insights personales; nunca se comparten</td></tr>
+        <tr><td>Datos de bienestar</td><td>Check-ins de ánimo, energía, estrés</td><td>Tendencias e insights personales; no se entregan a terceros, pero sí pueden viajar en el contexto del asistente</td></tr>
         <tr><td>Datos financieros</td><td>Pagos registrados, obligaciones, cuentas por pagar</td><td>Control financiero personal/empresarial</td></tr>
         <tr><td>Datos empresariales</td><td>Organizaciones, roles, KPIs, riesgos, compliance</td><td>Gestión empresarial (anexo B)</td></tr>
         <tr><td>Datos académicos (NNA)</td><td>Notas, asignaturas, tareas, metas</td><td>Módulo Estudiante (anexo C)</td></tr>
@@ -124,7 +124,10 @@
         <h2>8. Inteligencia artificial</h2>
         <ul>
         <li>Usamos modelos de <strong>Anthropic (Claude)</strong> para generar respuestas de los asistentes (QueBot y funciones de IA de HumanOS).</li>
-        <li>Antes de enviar texto al proveedor de IA, un <strong>sistema de depuración (PII scrubber)</strong> elimina automáticamente identificadores directos (RUT, teléfonos, correos, direcciones) cuando la función no los requiere.</li>
+        <li>En el <strong>chat conversacional</strong>, antes de enviar al proveedor de IA <strong>los mensajes de texto que escribes</strong>, un <strong>sistema de depuración (PII scrubber)</strong> reemplaza los identificadores que reconoce: RUT chileno, identificadores tributarios de otros países, teléfonos, correos electrónicos, números de tarjeta, IBAN y direcciones IP. <strong>Reconoce formatos, no intenciones</strong>: un identificador escrito de forma inusual puede no ser detectado.</li>
+        <li><strong>Esa depuración no cubre todos los caminos, y queremos que lo sepas antes de escribir.</strong> No se aplica <strong>cuando adjuntas un archivo</strong> —ni al archivo ni al mensaje que lo acompaña, porque leerlo entero es justamente lo que necesitas—, y <strong>tampoco cuando tu texto va a las funciones de agente</strong> que planifican o ejecutan tareas por ti: ahí viaja tal como lo escribiste. La regla práctica, y la única que no se nos queda vieja al agregar funciones nuevas, es esta: <strong>da por hecho que todo lo que escribas puede llegar al proveedor tal cual</strong>.</li>
+        <li><strong>Tu propia identidad sí viaja en el contexto del asistente.</strong> Para que QueBot pueda llenar un formulario, redactar un documento o citarte correctamente sin que tengas que dictarle tus datos en cada conversación, su contexto incluye <strong>tu nombre y tu RUT</strong>, y —cuando trabajas en una empresa— <strong>el RUT y la razón social de esa empresa</strong>. Son <strong>tus</strong> datos, en una sesión ya autenticada como tuya.</li>
+        <li><strong>El contexto del asistente no incluye el campo RUT de otra persona cuya ficha estés viendo.</strong> Si eres apoderado y revisas a tu estudiante, ese campo no viaja. Eso <strong>no</strong> significa que ningún identificador suyo pueda aparecer: un RUT escrito dentro de un texto libre —por ejemplo, en la biografía de esa persona— viaja junto con ese texto. Y tampoco alcanza a lo que le encargues: si le pides una gestión sobre datos de un tercero —redactar un contrato de arriendo, por ejemplo— el asistente recibe los datos necesarios para realizarla, incluido el identificador de esa persona.</li>
         <li><strong>Tus datos no se usan para entrenar modelos</strong> de IA propios ni de terceros.</li>
         <li>Las respuestas de IA son <strong>orientativas</strong>: no constituyen asesoría legal, financiera, médica ni profesional. Detalle en nuestra <a href="https://sinapsis.in/ia-responsable" target="_blank" rel="noopener">Política de IA Responsable</a>.</li>
         </ul>
@@ -139,7 +142,7 @@
         <h2>10. Niños, niñas y adolescentes (NNA)</h2>
         <p>El módulo <strong>Estudiante</strong> de HumanOS puede ser usado por menores de 18 años <strong>únicamente</strong> bajo estas condiciones (detalle en el anexo C):</p>
         <ul>
-        <li>El registro y la vinculación requieren el <strong>consentimiento del padre, madre o adulto responsable</strong>, quien mantiene visibilidad del progreso académico.</li>
+        <li>El registro y la vinculación requieren el <strong>consentimiento del padre, madre o adulto responsable</strong>, quien mantiene visibilidad de las próximas evaluaciones, proyectos y alertas, en los términos del anexo C.</li>
         <li>Tratamos el <strong>mínimo de datos necesarios</strong> para la función educativa, atendiendo al <strong>interés superior del niño</strong>.</li>
         <li><strong>Nunca</strong> usamos datos de NNA para publicidad, perfilado comercial ni los cedemos a terceros.</li>
         <li>El adulto responsable puede revocar el consentimiento y solicitar la eliminación de los datos del menor en cualquier momento.</li>
@@ -152,15 +155,17 @@
         <table class="legal-table">
         <tr><th>Encargado</th><th>Rol</th><th>Ubicación</th></tr>
         <tr><td>Google Cloud Platform</td><td>Alojamiento de aplicación y base de datos (Cloud Run / Cloud SQL, región us-central1)</td><td>EE.UU.</td></tr>
-        <tr><td>Anthropic</td><td>Procesamiento de consultas de IA (previo PII scrubbing)</td><td>EE.UU.</td></tr>
+        <tr><td>Anthropic</td><td>Procesamiento de consultas de IA (con la depuración y sus límites de la sección 8)</td><td>EE.UU.</td></tr>
         <tr><td>Google (OAuth / Calendar)</td><td>Autenticación e integración de agenda autorizada</td><td>EE.UU.</td></tr>
         <tr><td>Railway</td><td>Infraestructura de servicios secundarios en transición hacia Google Cloud</td><td>EE.UU.</td></tr>
         <tr><td>Meta / WhatsApp</td><td>Canal de mensajería cuando usas QueBot por WhatsApp (anexo D)</td><td>EE.UU.</td></tr>
+        <tr><td>Resend</td><td>Envío de correos de la cuenta (confirmación, invitaciones y avisos)</td><td>EE.UU.</td></tr>
+        <tr><td>ElevenLabs</td><td>Conversión a voz del texto del tutor cuando se usa el botón "Escuchar"</td><td>EE.UU.</td></tr>
         </table>
         </div>
         <p>Además, podremos divulgar información <strong>cuando lo exija la ley</strong> o una orden de autoridad competente, informándote salvo prohibición legal.</p>
         <h2>12. Transferencias internacionales</h2>
-        <p>Los encargados listados procesan datos fuera de Chile (principalmente EE.UU.). Cuando esto ocurre aplicamos garantías adecuadas: <strong>cláusulas contractuales</strong> con estándares de protección equivalentes a esta política, <strong>minimización previa</strong> (PII scrubbing hacia IA), cifrado en tránsito y en reposo, y evaluación del proveedor. Mantenemos el listado de encargados actualizado en esta política.</p>
+        <p>Los encargados listados procesan datos fuera de Chile (principalmente EE.UU.). Cuando esto ocurre aplicamos garantías adecuadas: <strong>cláusulas contractuales</strong> con estándares de protección equivalentes a esta política, <strong>minimización previa</strong> hacia la IA —con el alcance y los límites que describe la sección 8, que no cubre todos los caminos—, cifrado en tránsito y en reposo, y evaluación del proveedor. Mantenemos el listado de encargados actualizado en esta política.</p>
         <h2>13. Conservación</h2>
         <div class="legal-table-wrap">
         <table class="legal-table">
@@ -192,7 +197,7 @@
         <ul>
         <li>Cifrado <strong>TLS/HTTPS</strong> en todas las comunicaciones y cifrado en reposo en la base de datos.</li>
         <li><strong>Cifrado adicional AES-256-GCM a nivel de campo</strong> para datos sensibles de salud (RUT, diagnósticos, alergias, notas clínicas).</li>
-        <li><strong>Registro de auditoría clínica inalterable</strong> para todo acceso a fichas de salud.</li>
+        <li><strong>Registro de auditoría clínica con detección de alteraciones</strong> para todo acceso a fichas de salud: si alguien modificara una entrada, el registro lo delata; no es lo mismo que impedir físicamente el cambio.</li>
         <li>Control de acceso por <strong>mínimo privilegio</strong> y aislamiento por usuario y organización (multi-tenant).</li>
         <li>Autenticación con Google OAuth 2.0; gestión segura de secretos y tokens.</li>
         <li>Consultas parametrizadas (ORM) contra inyección; cabeceras de seguridad y CSP.</li>
@@ -216,13 +221,18 @@
         </ul>
         <hr>
         <h2>Anexo A — HumanOS Persona y Familia (humanos.eco)</h2>
-        <p>Módulos de vida personal, familia, salud (Care/Salud), bienestar, finanzas personales, agenda y documentos. Particularidades: los <strong>datos de salud</strong> solo se tratan con consentimiento expreso y cifrado a nivel de campo (sección 15); los <strong>check-ins de bienestar</strong> generan tendencias solo para ti y nunca se comparten; la integración de <strong>Google Calendar</strong> es opcional y revocable.</p>
+        <p>Módulos de vida personal, familia, salud (Care/Salud), bienestar, finanzas personales, agenda y documentos. Particularidades: los <strong>datos de salud</strong> solo se tratan con consentimiento expreso y cifrado a nivel de campo (sección 15); los <strong>check-ins de bienestar</strong> generan tendencias solo para ti y no se entregan a terceros —aunque pueden viajar en el contexto del asistente, como el resto de tus datos—; la integración de <strong>Google Calendar</strong> es opcional y revocable.</p>
         <h2>Anexo B — HumanOS Empresa (empresa.eco)</h2>
         <p>Cuando una organización usa HumanOS, la organización define qué datos de negocio carga (KPIs, riesgos, compliance, equipos). Respecto de los datos personales de sus miembros, la organización actúa como <strong>responsable</strong> y Sinapsis como <strong>encargado</strong> conforme al contrato de servicio; el aislamiento multi-tenant impide el acceso entre organizaciones.</p>
         <h2>Anexo C — HumanOS Estudiante (estudiante.humanos.eco)</h2>
-        <p>Uso por NNA con <strong>consentimiento del adulto responsable</strong> (sección 10): datos académicos mínimos (notas, asignaturas, tareas, metas), visibilidad parental del progreso, cero publicidad y cero perfilado. La versión exacta del texto de consentimiento aceptado queda registrada con el versionado verificable de la sección 19.</p>
+        <p>Uso por NNA con <strong>consentimiento del adulto responsable</strong> (sección 10). La inscripción la hace el padre, madre o tutor/a legal: declara su calidad, acepta el consentimiento informado, confirma su correo y, después de una revisión manual, <strong>confirma el consentimiento con su cuenta</strong>. El alumno acepta sus propias condiciones al activar su cuenta. Se registran la versión y la huella SHA-256 de cada texto aceptado (sección 19).</p>
+        <p><strong>Datos:</strong> los mínimos para la función educativa (asignaturas, evaluaciones, tareas, metas y las notas que el alumno registre), con cero publicidad y cero perfilado.</p>
+        <p><strong>Qué ve el adulto responsable:</strong> próximas pruebas y entregas, proyectos y alertas. <strong>No ve</strong> conversaciones con el tutor, materiales, tarjetas de repaso, sesiones de estudio ni notas. El alumno puede ocultar además cualquiera de las categorías visibles.</p>
+        <p><strong>Correo:</strong> solo avisos de la cuenta y, al alumno, recordatorios de sus próximas pruebas (título y ramo); nunca notas, conversaciones ni documentos del alumno.</p>
+        <p><strong>Retiro y eliminación:</strong> el adulto responsable puede retirar el consentimiento desde su cuenta; se corta de inmediato su acceso y se suspende la cuenta del alumno. Si pide eliminar los datos, respondemos dentro de 2 días hábiles y eliminamos la cuenta del alumno y sus datos dentro de 30 días. Al terminar el piloto avisamos por correo con al menos 30 días de anticipación; si no se pide que la cuenta siga, la eliminamos junto con sus datos dentro de los 30 días siguientes al término.</p>
+        <p><strong>Inteligencia artificial:</strong> lo que el alumno escribe o carga solo se procesa con el proveedor de IA declarado en la sección 11 (Anthropic); no se envía a otros proveedores de IA ni a equipos locales. Si el alumno usa "Escuchar", el texto de la respuesta del tutor se convierte a voz con ElevenLabs. El dictado por voz usa el reconocimiento del navegador; en Chrome, el audio lo procesa Google según sus propias condiciones.</p>
         <h2>Anexo D — QueBot por WhatsApp</h2>
-        <p>Si usas QueBot vía WhatsApp, <strong>Meta/WhatsApp</strong> trata los metadatos del canal (tu número, horarios de mensajes) según sus propias políticas; el contenido que QueBot procesa sigue esta política (IA con PII scrubbing, sección 8). Si prefieres no exponer metadatos a WhatsApp, puedes usar QueBot dentro de la plataforma web.</p>
+        <p>Si usas QueBot vía WhatsApp, <strong>Meta/WhatsApp</strong> trata los metadatos del canal (tu número, horarios de mensajes) según sus propias políticas; el contenido que QueBot procesa sigue esta política (IA con la depuración y sus límites de la sección 8). Si prefieres no exponer metadatos a WhatsApp, puedes usar QueBot dentro de la plataforma web.</p>
 
         <nav class="legal-footer-nav" aria-label="Documentos legales">
             <a href="/privacy">Privacidad</a>

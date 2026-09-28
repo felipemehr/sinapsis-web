@@ -6,7 +6,7 @@
     <title>Política de IA Responsable — Sinapsis SpA</title>
     <meta name="description" content="Política de IA Responsable de Sinapsis SpA: supervisión humana, proporcionalidad, trazabilidad, protección de datos y límites de uso.">
     <meta name="robots" content="index,follow">
-    <meta name="policy-integrity" content="ia-responsable/es v2.0.0 sha256:9931ce926583e32a8cdd18d88d0a989ce1e4a50e2a048b7845c8e372acd51de5">
+    <meta name="policy-integrity" content="ia-responsable/es v2.1.1 sha256:f50cdc4b6e7c959c39c1028d0a6cee257f8eb75426ba4de03c871cfb8fed830c">
     <link rel="canonical" href="https://sinapsis.in/ia-responsable">
     <link rel="alternate" hreflang="en" href="https://sinapsis.in/en/responsible-ai">
     <link rel="alternate" hreflang="es" href="https://sinapsis.in/ia-responsable">
@@ -31,7 +31,7 @@
 
     <main class="legal-content">
         <h1>Política de IA Responsable</h1>
-        <p><strong>Última actualización: 14 de agosto de 2026 · Versión 2.0.0</strong></p>
+        <p><strong>Última actualización: 9 de septiembre de 2026 · Versión 2.1.1</strong></p>
         <p><strong>Sinapsis SpA</strong> diseña, implementa y opera sistemas que incorporan inteligencia artificial: asistentes conversacionales (QueBot y las funciones de IA de HumanOS), agentes, automatizaciones y herramientas de análisis. Esta política define cómo lo hacemos de forma responsable, tomando como referencia la norma <strong>ISO/IEC 42001</strong> (gestión de sistemas de IA) y la regulación chilena de protección de datos. Aplica a los productos propios, a los proyectos de consultoría y a los prototipos que desarrollamos.</p>
         <h2>1. Supervisión humana</h2>
         <ul>
@@ -52,7 +52,7 @@
         <h2>5. Protección de datos en sistemas de IA</h2>
         <ul>
         <li>El uso de datos personales en sistemas de IA se rige por nuestra <a href="/privacy">Política de Privacidad</a> y la <a href="https://sinapsis.in/datos-personales" target="_blank" rel="noopener">Política de Tratamiento de Datos Personales</a>.</li>
-        <li>Usamos modelos de <strong>Anthropic (Claude)</strong> para generar respuestas. Antes de enviar texto al proveedor, un <strong>sistema de depuración (PII scrubber)</strong> elimina automáticamente identificadores directos (RUT, teléfonos, correos, direcciones) cuando la función no los requiere.</li>
+        <li>Usamos modelos de <strong>Anthropic (Claude)</strong> para generar respuestas. En el chat conversacional, antes de enviar los mensajes de texto que escribes, un <strong>sistema de depuración (PII scrubber)</strong> reemplaza los identificadores que reconoce. <strong>Esa depuración no cubre todos los caminos</strong>: no se aplica con adjuntos ni en las funciones de agente. El detalle de qué depura, qué no, y qué datos de tu propia identidad sí viajan en el contexto del asistente está en la <a href="/privacy">sección 8 de la Política de Privacidad</a> — que es la fuente única de esa descripción.</li>
         <li><strong>Los datos de nuestros usuarios no se usan para entrenar modelos</strong> de IA propios ni de terceros.</li>
         <li>Minimizamos los datos personales que se envían a modelos de terceros.</li>
         </ul>
