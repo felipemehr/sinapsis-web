@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanOS GRC — Control que se puede demostrar | Sinapsis SpA</title>
+    <meta name="description" content="Para contraloría, auditoría interna y cumplimiento: de la norma al control, con evidencia sellada y hallazgos con historia. Agenda una demo de 15 minutos.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="canonical" href="https://sinapsis.in/grc">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sinapsis SpA">
+    <meta property="og:title" content="HumanOS GRC — Control que se puede demostrar">
+    <meta property="og:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Agenda una demo de 15 minutos.">
+    <meta property="og:url" content="https://sinapsis.in/grc">
+    <meta property="og:image" content="https://sinapsis.in/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HumanOS GRC — Control que se puede demostrar">
+    <meta name="twitter:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Agenda una demo de 15 minutos.">
+    <meta name="twitter:image" content="https://sinapsis.in/assets/img/og-image.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon-512.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Ajustes propios de la página de destino (el resto sale de site.css) -->
+    <style>
+        section[id] { scroll-margin-top: 84px; }
+        .diag-field input:focus-visible,
+        .diag-field textarea:focus-visible {
+            outline: 2px solid var(--blue); outline-offset: 1px;
+        }
+        .diag-req-note { font-size: 0.76rem; color: var(--muted); }
+        .lead-link { margin-top: 1.6rem; font-size: 0.9rem; color: var(--muted); }
+    </style>
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <!-- Navegación -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/" class="nav-brand" aria-label="Sinapsis — inicio">
+            <img src="/assets/img/logo-sinapsis.png" alt="Sinapsis" width="760" height="240">
+        </a>
+        <button type="button" class="hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#inicio">Inicio</a></li>
+            <li><a href="/#humanos">HumanOS</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#metodo">Método</a></li>
+            <li><a href="/#quebot">QueBot</a></li>
+            <li><a href="/#confianza">Cumplimiento</a></li>
+            <li><a href="/descubre">Descubre</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+            <li><a href="#demo" class="nav-cta">Agenda una demo</a></li>
+            <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/">EN</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <span class="hero-kicker">Contraloría · Auditoría interna · Cumplimiento</span>
+            <h1>HumanOS GRC — <em>Control que se puede demostrar</em></h1>
+            <p class="hero-sub">
+                Porque no basta con afirmar que se controla. Hay que poder demostrarlo.
+                HumanOS GRC conecta cada norma con sus obligaciones, cada obligación con un
+                control y un responsable con nombre, y cada control con la evidencia que lo respalda.
+            </p>
+            <div class="hero-buttons">
+                <a href="#demo" class="btn btn-primary">Agenda una demo de 15 minutos</a>
+                <a href="#como-funciona" class="btn btn-outline">Cómo funciona</a>
+            </div>
+            <p class="hero-note">Para contralorías, auditoría interna y equipos de cumplimiento de universidades, instituciones públicas y empresas reguladas.</p>
+        </div>
+    </header>
+
+    <!-- El problema -->
+    <section class="band-soft" id="problema">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">El problema</span>
+                <h2 class="section-title">¿Puedes demostrar que se cumplen?</h2>
+                <p class="section-subtitle" style="max-width: 760px;">
+                    Una universidad funciona sobre miles de obligaciones: leyes, reglamentos,
+                    políticas internas. Cada una tiene un responsable. Hoy, la operación vive en
+                    sistemas; el control, en planillas, correos y memoria. Y el costo aparece tarde:
+                    cuando un auditor, un regulador o un tribunal pide la prueba exacta.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label green">Cómo funciona</span>
+                <h2 class="section-title">De la norma al hallazgo, paso a paso.</h2>
+                <p class="section-subtitle">
+                    Cinco pasos que conectan lo que exige una norma con lo que puedes demostrar.
+                </p>
+            </div>
+            <div class="method-steps">
+                <div class="method-step reveal">
+                    <span class="step-num">1</span>
+                    <h3>Norma</h3>
+                    <p>Cada norma entra desde su fuente oficial, con versión y huella.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">2</span>
+                    <h3>Obligaciones</h3>
+                    <p>Se descompone en obligaciones concretas. La inteligencia artificial propone; ninguna queda verificada sin una persona. Y cada obligación se aplica solo a quien corresponde.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">3</span>
+                    <h3>Control</h3>
+                    <p>Cada obligación tiene un control, y cada control, un responsable con nombre. Lo que falta también se ve: obligaciones sin control, controles sin prueba.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">4</span>
+                    <h3>Evidencia</h3>
+                    <p>La evidencia se sella al entrar, no cuando conviene, con su huella SHA-256.</p>
+                </div>
+                <div class="method-step reveal">
+                    <span class="step-num">5</span>
+                    <h3>Hallazgo</h3>
+                    <p>Cuando una auditoría prueba un control y falla, nace un hallazgo con toda su historia.</p>
+                </div>
+            </div>
+            <div class="method-quote reveal" style="margin-top: 2.2rem;">
+                La IA propone. Una persona verifica.
+            </div>
+        </div>
+    </section>
+
+    <!-- Reglas de diseño -->
+    <section class="band-soft" id="reglas">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Reglas de diseño</span>
+                <h2 class="section-title">Tres reglas que protegen la prueba.</h2>
+            </div>
+            <div class="cards-grid cols-3">
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Quien remedia, no verifica</h3>
+                    <p>Quien remedia un hallazgo puede marcar su acción como completada, pero no puede verificarla. Esa regla no es una recomendación: el sistema la hace cumplir. Un cierre no es una declaración. Es una verificación.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+                    </div>
+                    <h3>Nada cambia en silencio</h3>
+                    <p>Cuando una norma cambia, nada se actualiza en silencio. Cada impacto propuesto requiere una decisión humana antes de aplicar el cambio.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <h3>Bitácora encadenada</h3>
+                    <p>Todo queda en una bitácora encadenada. Si alguien la altera, la verificación lo delata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valor y límites -->
+    <section id="valor">
+        <div class="container">
+            <div class="product-grid" style="margin-top: 0;">
+                <div class="reveal">
+                    <span class="section-label green">El valor</span>
+                    <h2 class="section-title">Para una contraloría, el valor no es tener más datos.</h2>
+                    <p class="section-subtitle">
+                        Es poder defender qué se auditó, qué se probó y quién lo revisó.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Lo que no prometemos</h3>
+                    <ul class="pain-list">
+                        <li>No certificamos ni garantizamos el cumplimiento de ninguna norma. HumanOS deja la prueba; la decisión es de una persona.</li>
+                        <li>No prometemos una bitácora inalterable: lo que hace la cadena es delatar la alteración cuando se verifica.</li>
+                        <li>La inteligencia artificial no verifica: propone. Ninguna obligación queda verificada sin una persona.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo (formulario) -->
+    <section class="band-soft" id="demo">
+        <div class="container">
+            <div class="diag-instant reveal">
+                <div class="diag-instant-text">
+                    <h3>Mira el aviso en Instagram: @sinapsis.in.cl</h3>
+                </div>
+                <div class="diag-instant-actions">
+                    <a href="https://www.instagram.com/sinapsis.in.cl/" target="_blank" rel="noopener" class="btn btn-outline">Ver en Instagram</a>
+                </div>
+            </div>
+            <div class="diag-grid">
+                <div class="diag-intro reveal">
+                    <span class="section-label green">Demo</span>
+                    <h2 class="section-title" id="demo-title">Agenda una demo<br>de 15 minutos</h2>
+                    <p class="section-subtitle" style="max-width: 480px;">
+                        Déjanos tus datos y cuéntanos qué te gustaría ver. Te contactamos para coordinar la demo.
+                    </p>
+                    <ul class="diag-perks">
+                        <li>Una conversación de <strong>15 minutos</strong>.</li>
+                        <li>Tú nos dices <strong>qué te gustaría ver</strong>.</li>
+                    </ul>
+                    <p class="lead-link"><a href="/activos" class="card-link">¿Administras arriendos o comunidades? Mira HumanOS para arriendos y comunidades →</a></p>
+                </div>
+
+                <div class="diag-card reveal">
+                    <form class="diag-form" id="demoForm" novalidate aria-labelledby="demo-title">
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-nombre">
+                                <label for="d-nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="d-nombre" name="nombre" autocomplete="name" maxlength="160"
+                                       placeholder="Nombre y apellido" required aria-required="true">
+                                <span class="diag-error" id="e-nombre">Dinos tu nombre.</span>
+                            </div>
+                            <div class="diag-field" id="f-email">
+                                <label for="d-email">Correo <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="d-email" name="email" autocomplete="email" maxlength="254"
+                                       placeholder="tu@institucion.cl" required aria-required="true">
+                                <span class="diag-error" id="e-email">Ingresa un correo válido.</span>
+                            </div>
+                        </div>
+
+                        <div class="diag-field" id="f-empresa">
+                            <label for="d-empresa">Institución <span class="req" aria-hidden="true">*</span></label>
+                            <input type="text" id="d-empresa" name="empresa" autocomplete="organization" maxlength="200"
+                                   placeholder="Nombre de tu institución" required aria-required="true">
+                            <span class="diag-error" id="e-empresa">Cuéntanos el nombre de tu institución.</span>
+                        </div>
+
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-cargo">
+                                <label for="d-cargo">Cargo</label>
+                                <input type="text" id="d-cargo" name="cargo" autocomplete="organization-title" maxlength="60"
+                                       placeholder="Tu cargo">
+                            </div>
+                            <div class="diag-field" id="f-telefono">
+                                <label for="d-telefono">Teléfono</label>
+                                <input type="tel" id="d-telefono" name="telefono" autocomplete="tel" inputmode="tel" maxlength="40"
+                                       placeholder="+56 9 1234 5678">
+                            </div>
+                        </div>
+
+                        <div class="diag-field" id="f-ciudad">
+                            <label for="d-ciudad">Ciudad</label>
+                            <input type="text" id="d-ciudad" name="ciudad" autocomplete="address-level2" maxlength="120"
+                                   placeholder="Ciudad">
+                        </div>
+
+                        <div class="diag-field" id="f-detalle">
+                            <label for="d-detalle">¿Qué te gustaría ver en la demo?</label>
+                            <textarea id="d-detalle" name="detalle" rows="3" aria-describedby="d-count"
+                                      placeholder="Cuéntanos qué te gustaría ver o resolver."></textarea>
+                            <span class="hint" id="d-count"></span>
+                        </div>
+
+                        <!-- honeypot anti-bot: debe quedar vacío -->
+                        <div class="diag-hp" aria-hidden="true">
+                            <label for="d-confirm">No completar este campo</label>
+                            <input type="text" id="d-confirm" name="confirmEmail" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <p class="diag-req-note"><span aria-hidden="true">*</span> Campos obligatorios.</p>
+
+                        <button type="submit" class="btn btn-primary diag-submit" id="demoSubmit">
+                            Agenda mi demo de 15 minutos
+                        </button>
+                        <p class="diag-consent">
+                            Al enviar aceptas que te contactemos para coordinar la demo. Tratamos tus datos según nuestra
+                            <a href="/privacy">Política de Privacidad</a> y nuestra
+                            <a href="/datos-personales">Política de Tratamiento de Datos Personales</a>.
+                        </p>
+
+                        <div class="diag-status" id="demoStatus" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-row">
+                    <img src="/assets/img/icon-512.png" alt="" width="512" height="512">
+                    <div class="footer-brand-name">SINAPSIS <span style="font-weight: 500; color: #7A93AB;">SpA</span></div>
+                </div>
+                <p class="footer-tagline">
+                    Consultoría, tecnología e innovación para sistemas de trabajo híbridos.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="/#humanos">HumanOS</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#metodo">Método</a></li>
+                    <li><a href="/#quebot">QueBot</a></li>
+                    <li><a href="/#confianza">Cumplimiento</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Producto</h4>
+                <ul>
+                    <li><a href="/descubre">Descubre — diagnóstico instantáneo</a></li>
+                    <li><a href="https://www.humanos.eco" target="_blank" rel="noopener">humanos.eco</a></li>
+                    <li><a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener">Asistente Sinapsis (QueBot)</a></li>
+                    <li><a href="mailto:admin@sinapsis.in?subject=Demo%20HumanOS">Solicitar demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal y cumplimiento</h4>
+                <ul>
+                    <li><a href="/privacy">Privacidad</a></li>
+                    <li><a href="/terms">Términos</a></li>
+                    <li><a href="/cookies">Cookies</a></li>
+                    <li><a href="/seguridad">Seguridad</a></li>
+                    <li><a href="/ia-responsable">IA Responsable</a></li>
+                    <li><a href="/datos-personales">Datos Personales</a></li>
+                    <li><a href="/cumplimiento">Cumplimiento y estándares</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sinapsis SpA · Temuco, Chile</p>
+            <p><a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll (sin IntersectionObserver, todo queda visible)
+        (function () {
+            const els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (el) { observer.observe(el); });
+        })();
+
+        // Menú móvil
+        (function () {
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (!toggle || !links) return;
+            toggle.addEventListener('click', function () {
+                const open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+
+        // Smooth scroll + cierre de menú móvil
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const links = document.querySelector('.nav-links');
+                    if (links) links.classList.remove('open');
+                    const toggle = document.getElementById('navToggle');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // ── Formulario «Agenda una demo de 15 minutos» ───────────────────────
+        // Mismo endpoint, honeypot y manejo de errores que el formulario de
+        // diagnóstico de la portada. El endpoint no tiene campo de campaña: el
+        // origen viaja dentro de `rubro` como "[GRC · fuente/medio/campaña] …"
+        // (máx. 200 caracteres, que es el tope del servidor).
+        (function () {
+            const form = document.getElementById('demoForm');
+            if (!form) return;
+            const PRODUCT = 'GRC';
+            const ENDPOINT = 'https://www.humanos.eco/api/diagnostico-request';
+            const MAX_RUBRO = 200;
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const submitBtn = document.getElementById('demoSubmit');
+            const statusBox = document.getElementById('demoStatus');
+            const cargoInput = form.elements['cargo'];
+            const detalleInput = form.elements['detalle'];
+            const counter = document.getElementById('d-count');
+            let sending = false;
+
+            function clean(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
+
+            // Recorta a n unidades sin partir un par sustituto al final.
+            function clip(s, n) {
+                s = s.slice(0, n);
+                return /[\uD800-\uDBFF]$/.test(s) ? s.slice(0, -1) : s;
+            }
+
+            // Un valor utm: solo caracteres inofensivos y corto, para que no
+            // desplace lo que escribió la persona ni rompa el formato del prefijo.
+            function utmValue(params, key) {
+                const raw = params.get(key) || '';
+                return clip(raw.replace(/[^\w.+\- ]/g, '').trim(), 24);
+            }
+
+            function origen() {
+                let params;
+                try { params = new URLSearchParams(window.location.search); }
+                catch (err) { return 'directo'; }
+                const parts = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return utmValue(params, k); });
+                if (!parts.some(Boolean)) return 'directo';
+                return parts.map(function (p) { return p || '-'; }).join('/');
+            }
+
+            const prefix = '[' + PRODUCT + ' · ' + origen() + ']';
+
+            function cargoSegment() {
+                const c = clean(cargoInput.value);
+                return c ? 'Cargo: ' + c : '';
+            }
+
+            // "[GRC · fuente/medio/campaña] Cargo: X · <texto>", ≤ 200.
+            function buildRubro() {
+                const body = [cargoSegment(), clean(detalleInput.value)].filter(Boolean).join(' · ');
+                return clip(body ? prefix + ' ' + body : prefix, MAX_RUBRO);
+            }
+
+            // El texto libre solo puede ocupar lo que sobra del tope de 200.
+            function updateRoom() {
+                const seg = cargoSegment();
+                const used = prefix.length + 1 + (seg ? seg.length + 3 : 0);
+                const room = Math.max(0, MAX_RUBRO - used);
+                detalleInput.maxLength = room;
+                const left = Math.max(0, room - detalleInput.value.length);
+                counter.textContent = 'Te quedan ' + left + ' caracteres.';
+            }
+            cargoInput.addEventListener('input', updateRoom);
+            detalleInput.addEventListener('input', updateRoom);
+            updateRoom();
+
+            function setInvalid(wrapId, inputId, invalid) {
+                const wrap = document.getElementById(wrapId);
+                if (wrap) wrap.classList.toggle('invalid', invalid);
+                const input = document.getElementById(inputId);
+                if (!input) return;
+                input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+                // El mensaje de error solo describe al campo mientras está visible.
+                if (invalid) input.setAttribute('aria-describedby', 'e-' + inputId.slice(2));
+                else input.removeAttribute('aria-describedby');
+            }
+            function clearErrors() {
+                setInvalid('f-empresa', 'd-empresa', false);
+                setInvalid('f-nombre', 'd-nombre', false);
+                setInvalid('f-email', 'd-email', false);
+            }
+            function showStatus(kind, html) {
+                statusBox.className = 'diag-status show ' + kind;
+                statusBox.innerHTML = html;
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (sending) return;
+                clearErrors();
+
+                const empresa = form.elements['empresa'].value.trim();
+                const nombre = form.elements['nombre'].value.trim();
+                const email = form.elements['email'].value.trim();
+                const telefono = form.elements['telefono'].value.trim();
+                const ciudad = form.elements['ciudad'].value.trim();
+                const confirmEmail = form.elements['confirmEmail'].value; // honeypot
+
+                // Validación cliente
+                let firstBad = null;
+                if (!nombre) { setInvalid('f-nombre', 'd-nombre', true); firstBad = firstBad || 'd-nombre'; }
+                if (!email || !emailRe.test(email)) { setInvalid('f-email', 'd-email', true); firstBad = firstBad || 'd-email'; }
+                if (!empresa) { setInvalid('f-empresa', 'd-empresa', true); firstBad = firstBad || 'd-empresa'; }
+                if (firstBad) {
+                    statusBox.className = 'diag-status';
+                    const el = document.getElementById(firstBad);
+                    if (el) el.focus();
+                    return;
+                }
+
+                // Bot: honeypot lleno → simular éxito, no enviar
+                if (confirmEmail) {
+                    showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Recibimos tu solicitud. Te contactaremos para coordinar la demo.');
+                    form.reset();
+                    updateRoom();
+                    return;
+                }
+
+                const payload = { empresa: empresa, nombre: nombre, email: email, rubro: buildRubro(), confirmEmail: confirmEmail };
+                if (telefono) payload.telefono = telefono;
+                if (ciudad) payload.ciudad = ciudad;
+
+                sending = true;
+                submitBtn.setAttribute('aria-busy', 'true');
+                const originalLabel = submitBtn.textContent;
+                submitBtn.textContent = 'Enviando…';
+                statusBox.className = 'diag-status';
+
+                try {
+                    const res = await fetch(ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (res.ok) {
+                        showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Recibimos tu solicitud. Te contactaremos para coordinar la demo.');
+                        form.reset();
+                        updateRoom();
+                    } else if (res.status === 429) {
+                        showStatus('error', '<span class="diag-status-title">Recibimos muchas solicitudes</span>Espera un momento y vuelve a intentar. Si es urgente, escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a>.');
+                    } else {
+                        showStatus('error', '<span class="diag-status-title">No pudimos enviar tu solicitud</span>Revisa los datos e intenta de nuevo, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                    }
+                } catch (err) {
+                    showStatus('error', '<span class="diag-status-title">Hubo un problema de conexión</span>Inténtalo nuevamente en unos minutos, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                } finally {
+                    sending = false;
+                    submitBtn.removeAttribute('aria-busy');
+                    submitBtn.textContent = originalLabel;
+                }
+            });
+        })();
+    </script>
+
+    <script defer src="/assets/js/chat-widget.js"></script>
+    <script defer src="/assets/js/pwa.js"></script>
+
+</body>
+</html>

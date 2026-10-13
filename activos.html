@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanOS para administrar arriendos y comunidades | Sinapsis SpA</title>
+    <meta name="description" content="Ocupación, arriendos del mes y cobros pendientes; gastos comunes, morosidad por unidad y fondo de reserva; e IA que te lleva al detalle. Pide una demo de HumanOS.">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="canonical" href="https://sinapsis.in/activos">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sinapsis SpA">
+    <meta property="og:title" content="HumanOS para administrar arriendos y comunidades">
+    <meta property="og:description" content="Ocupación, cobros y morosidad por unidad, con IA que te lleva al detalle. Tus activos y tu comunidad, bajo control. Pide una demo.">
+    <meta property="og:url" content="https://sinapsis.in/activos">
+    <meta property="og:image" content="https://sinapsis.in/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HumanOS para administrar arriendos y comunidades">
+    <meta name="twitter:description" content="Ocupación, cobros y morosidad por unidad, con IA que te lleva al detalle. Tus activos y tu comunidad, bajo control. Pide una demo.">
+    <meta name="twitter:image" content="https://sinapsis.in/assets/img/og-image.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon-512.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Ajustes propios de la página de destino (el resto sale de site.css) -->
+    <style>
+        section[id] { scroll-margin-top: 84px; }
+        .diag-field select {
+            width: 100%;
+            font-family: inherit; font-size: 0.95rem; color: var(--ink);
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.7rem 0.85rem;
+            transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+        .diag-field select:focus {
+            border-color: var(--blue); background: #fff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+        .diag-field.invalid select { border-color: #E0564B; background: #FEF5F4; }
+        .diag-field input:focus-visible,
+        .diag-field select:focus-visible {
+            outline: 2px solid var(--blue); outline-offset: 1px;
+        }
+        .diag-req-note { font-size: 0.76rem; color: var(--muted); }
+        .lead-link { margin-top: 1.6rem; font-size: 0.9rem; color: var(--muted); }
+    </style>
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <!-- Navegación -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/" class="nav-brand" aria-label="Sinapsis — inicio">
+            <img src="/assets/img/logo-sinapsis.png" alt="Sinapsis" width="760" height="240">
+        </a>
+        <button type="button" class="hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#inicio">Inicio</a></li>
+            <li><a href="/#humanos">HumanOS</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#metodo">Método</a></li>
+            <li><a href="/#quebot">QueBot</a></li>
+            <li><a href="/#confianza">Cumplimiento</a></li>
+            <li><a href="/descubre">Descubre</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+            <li><a href="#demo" class="nav-cta">Pide una demo</a></li>
+            <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/">EN</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <span class="hero-kicker">Activos inmobiliarios · Comunidades · IA</span>
+            <h1>HumanOS para administrar <em>arriendos y comunidades</em></h1>
+            <p class="hero-sub">
+                Propiedades, contratos, cobros, gastos comunes… Cuando la información se
+                dispersa, administrar se vuelve más difícil. HumanOS conecta la administración
+                de tus activos inmobiliarios y de tus comunidades.
+            </p>
+            <div class="hero-buttons">
+                <a href="#demo" class="btn btn-primary">Pide una demo</a>
+                <a href="#activos" class="btn btn-outline">Qué incluye</a>
+            </div>
+            <p class="hero-note">Para corredoras, administradoras de arriendos y administradores de edificios y condominios.</p>
+        </div>
+    </header>
+
+    <!-- Activos inmobiliarios -->
+    <section class="band-soft" id="activos">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Activos inmobiliarios</span>
+                <h2 class="section-title">Mira tu cartera de un vistazo<br>y entra a cada propiedad.</h2>
+                <p class="section-subtitle">
+                    Mira la ocupación, los arriendos del mes y lo que falta por cobrar. Filtra tu
+                    cartera y entra a cada propiedad: su contrato vigente y sus últimos movimientos.
+                </p>
+            </div>
+            <div class="cards-grid cols-3">
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
+                    </div>
+                    <h3>Panel de la cartera</h3>
+                    <p>Propiedades vigentes, arriendos del mes, porcentaje cobrado, pendientes, vacantes y contratos por vencer, junto con la tasa de ocupación.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>
+                    </div>
+                    <h3>Propiedades y fichas</h3>
+                    <p>Una lista de propiedades con filtro por propietario. Al abrir una propiedad ves su contrato vigente y sus últimos movimientos, con su estado pendiente o pagado.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+                    </div>
+                    <h3>Cobros</h3>
+                    <p>Los cobros pendientes en una lista y la cobranza del mes: cargado, cobrado y por cobrar. Filtra por estado y registra un pago. Montos en pesos chilenos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunidades -->
+    <section id="comunidades">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label green">Comunidades</span>
+                <h2 class="section-title">Gastos comunes, cobranza y fondo de reserva,<br>con las cuentas claras y al día.</h2>
+                <p class="section-subtitle">
+                    Ordena los gastos comunes, la cobranza y el fondo de reserva. Ve la morosidad
+                    de cada unidad y registra sus pagos.
+                </p>
+            </div>
+            <div class="cards-grid cols-3">
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>
+                    </div>
+                    <h3>Panel de la comunidad</h3>
+                    <p>Unidades, morosidad, periodo actual y fondo de reserva. Y más abajo, la recaudación del periodo —cargos emitidos, cobrado, saldo pendiente y porcentaje cobrado— y los egresos del mes.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+                    </div>
+                    <h3>Cobranza por periodo</h3>
+                    <p>Elige el periodo y ve, unidad por unidad: copropietario, total, pagado, saldo, días de mora e interés. El gasto común sale de los egresos del mes, prorrateados por coeficiente.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon green" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 14h6"/></svg>
+                    </div>
+                    <h3>Pagos y egresos</h3>
+                    <p>Registra el pago de una unidad —fecha, monto, medio y referencia— y el saldo y el total cobrado se recalculan. También puedes registrar los egresos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inteligencia artificial -->
+    <section class="band-soft" id="ia">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label green">Inteligencia artificial</span>
+                <h2 class="section-title">Pregunta lo que necesitas saber.</h2>
+                <p class="section-subtitle">
+                    La inteligencia artificial de HumanOS responde con tus datos y te lleva al
+                    detalle para decidir el siguiente paso.
+                </p>
+                <div class="method-quote">
+                    “¿Qué arriendos siguen pendientes de pago?”
+                </div>
+                <p class="section-subtitle" style="margin-top: 1.4rem;">
+                    Para esa pregunta, HumanOS consulta tus cobros pendientes y te lleva a la lista
+                    de Cobros, donde puedes filtrar por estado y registrar un pago.
+                </p>
+                <p class="quebot-notice" style="text-align: left;">Hoy la IA responde sobre arriendos. Puede cometer errores: verifica la información relevante antes de decidir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo (formulario) -->
+    <section id="demo">
+        <div class="container">
+            <div class="diag-instant reveal">
+                <div class="diag-instant-text">
+                    <h3>Mira el aviso en Instagram: @sinapsis.in.cl</h3>
+                </div>
+                <div class="diag-instant-actions">
+                    <a href="https://www.instagram.com/sinapsis.in.cl/" target="_blank" rel="noopener" class="btn btn-outline">Ver en Instagram</a>
+                </div>
+            </div>
+            <div class="diag-grid">
+                <div class="diag-intro reveal">
+                    <span class="section-label green">Demo</span>
+                    <h2 class="section-title" id="demo-title">Pide una demo</h2>
+                    <p class="section-subtitle" style="max-width: 480px;">
+                        Cuéntanos qué administras y te contactamos para coordinar la demo.
+                        HumanOS: tus activos y tu comunidad, bajo control.
+                    </p>
+                    <ul class="diag-perks">
+                        <li>Dinos si administras <strong>arriendos</strong>, un <strong>edificio o condominio</strong>, o <strong>ambos</strong>.</li>
+                    </ul>
+                    <p class="lead-link"><a href="/grc" class="card-link">¿Contraloría, auditoría interna o cumplimiento? Mira HumanOS GRC →</a></p>
+                </div>
+
+                <div class="diag-card reveal">
+                    <form class="diag-form" id="demoForm" novalidate aria-labelledby="demo-title">
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-nombre">
+                                <label for="d-nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="d-nombre" name="nombre" autocomplete="name" maxlength="160"
+                                       placeholder="Nombre y apellido" required aria-required="true">
+                                <span class="diag-error" id="e-nombre">Dinos tu nombre.</span>
+                            </div>
+                            <div class="diag-field" id="f-email">
+                                <label for="d-email">Correo <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="d-email" name="email" autocomplete="email" maxlength="254"
+                                       placeholder="tu@correo.cl" required aria-required="true">
+                                <span class="diag-error" id="e-email">Ingresa un correo válido.</span>
+                            </div>
+                        </div>
+
+                        <div class="diag-field" id="f-empresa">
+                            <label for="d-empresa">Empresa o comunidad <span class="req" aria-hidden="true">*</span></label>
+                            <input type="text" id="d-empresa" name="empresa" autocomplete="organization" maxlength="200"
+                                   placeholder="Nombre de tu empresa o comunidad" required aria-required="true">
+                            <span class="diag-error" id="e-empresa">Cuéntanos el nombre de tu empresa o comunidad.</span>
+                        </div>
+
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-administra">
+                                <label for="d-administra">¿Qué administras?</label>
+                                <select id="d-administra" name="administra">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="arriendos">Arriendos</option>
+                                    <option value="edificio o condominio">Edificio o condominio</option>
+                                    <option value="ambos">Ambos</option>
+                                </select>
+                            </div>
+                            <div class="diag-field" id="f-cantidad">
+                                <label for="d-cantidad">Nº aproximado de propiedades o unidades</label>
+                                <input type="text" id="d-cantidad" name="cantidad" inputmode="numeric" maxlength="5" autocomplete="off"
+                                       placeholder="Por ejemplo: 25">
+                                <span class="diag-error" id="e-cantidad">Ingresa un número entero, por ejemplo 25.</span>
+                            </div>
+                        </div>
+
+                        <div class="diag-row">
+                            <div class="diag-field" id="f-telefono">
+                                <label for="d-telefono">Teléfono</label>
+                                <input type="tel" id="d-telefono" name="telefono" autocomplete="tel" inputmode="tel" maxlength="40"
+                                       placeholder="+56 9 1234 5678">
+                            </div>
+                            <div class="diag-field" id="f-ciudad">
+                                <label for="d-ciudad">Ciudad</label>
+                                <input type="text" id="d-ciudad" name="ciudad" autocomplete="address-level2" maxlength="120"
+                                       placeholder="Ciudad">
+                            </div>
+                        </div>
+
+                        <!-- honeypot anti-bot: debe quedar vacío -->
+                        <div class="diag-hp" aria-hidden="true">
+                            <label for="d-confirm">No completar este campo</label>
+                            <input type="text" id="d-confirm" name="confirmEmail" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <p class="diag-req-note"><span aria-hidden="true">*</span> Campos obligatorios.</p>
+
+                        <button type="submit" class="btn btn-primary diag-submit" id="demoSubmit">
+                            Pide tu demo
+                        </button>
+                        <p class="diag-consent">
+                            Al enviar aceptas que te contactemos para coordinar la demo. Tratamos tus datos según nuestra
+                            <a href="/privacy">Política de Privacidad</a> y nuestra
+                            <a href="/datos-personales">Política de Tratamiento de Datos Personales</a>.
+                        </p>
+
+                        <div class="diag-status" id="demoStatus" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-row">
+                    <img src="/assets/img/icon-512.png" alt="" width="512" height="512">
+                    <div class="footer-brand-name">SINAPSIS <span style="font-weight: 500; color: #7A93AB;">SpA</span></div>
+                </div>
+                <p class="footer-tagline">
+                    Consultoría, tecnología e innovación para sistemas de trabajo híbridos.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="/#humanos">HumanOS</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#metodo">Método</a></li>
+                    <li><a href="/#quebot">QueBot</a></li>
+                    <li><a href="/#confianza">Cumplimiento</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Producto</h4>
+                <ul>
+                    <li><a href="/descubre">Descubre — diagnóstico instantáneo</a></li>
+                    <li><a href="https://www.humanos.eco" target="_blank" rel="noopener">humanos.eco</a></li>
+                    <li><a href="https://www.humanos.eco/s/sinapsis/chat" target="_blank" rel="noopener">Asistente Sinapsis (QueBot)</a></li>
+                    <li><a href="mailto:admin@sinapsis.in?subject=Demo%20HumanOS">Solicitar demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal y cumplimiento</h4>
+                <ul>
+                    <li><a href="/privacy">Privacidad</a></li>
+                    <li><a href="/terms">Términos</a></li>
+                    <li><a href="/cookies">Cookies</a></li>
+                    <li><a href="/seguridad">Seguridad</a></li>
+                    <li><a href="/ia-responsable">IA Responsable</a></li>
+                    <li><a href="/datos-personales">Datos Personales</a></li>
+                    <li><a href="/cumplimiento">Cumplimiento y estándares</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sinapsis SpA · Temuco, Chile</p>
+            <p><a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll (sin IntersectionObserver, todo queda visible)
+        (function () {
+            const els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (el) { observer.observe(el); });
+        })();
+
+        // Menú móvil
+        (function () {
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (!toggle || !links) return;
+            toggle.addEventListener('click', function () {
+                const open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+
+        // Smooth scroll + cierre de menú móvil
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const links = document.querySelector('.nav-links');
+                    if (links) links.classList.remove('open');
+                    const toggle = document.getElementById('navToggle');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // ── Formulario «Pide una demo» ───────────────────────────────────────
+        // Mismo endpoint, honeypot y manejo de errores que el formulario de
+        // diagnóstico de la portada. El endpoint no tiene campo de campaña ni
+        // de tipo de administración: ambos viajan dentro de `rubro` como
+        // "[ACTIVOS · fuente/medio/campaña] Administra: … · …" (máx. 200
+        // caracteres, que es el tope del servidor).
+        (function () {
+            const form = document.getElementById('demoForm');
+            if (!form) return;
+            const PRODUCT = 'ACTIVOS';
+            const ENDPOINT = 'https://www.humanos.eco/api/diagnostico-request';
+            const MAX_RUBRO = 200;
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const cantidadRe = /^[0-9]{1,5}$/;
+            const submitBtn = document.getElementById('demoSubmit');
+            const statusBox = document.getElementById('demoStatus');
+            let sending = false;
+
+            function clean(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
+
+            // Recorta a n unidades sin partir un par sustituto al final.
+            function clip(s, n) {
+                s = s.slice(0, n);
+                return /[\uD800-\uDBFF]$/.test(s) ? s.slice(0, -1) : s;
+            }
+
+            // Un valor utm: solo caracteres inofensivos y corto, para que no
+            // rompa el formato del prefijo.
+            function utmValue(params, key) {
+                const raw = params.get(key) || '';
+                return clip(raw.replace(/[^\w.+\- ]/g, '').trim(), 24);
+            }
+
+            function origen() {
+                let params;
+                try { params = new URLSearchParams(window.location.search); }
+                catch (err) { return 'directo'; }
+                const parts = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return utmValue(params, k); });
+                if (!parts.some(Boolean)) return 'directo';
+                return parts.map(function (p) { return p || '-'; }).join('/');
+            }
+
+            const prefix = '[' + PRODUCT + ' · ' + origen() + ']';
+
+            // "[ACTIVOS · fuente/medio/campaña] Administra: … · Propiedades o unidades (aprox.): N", ≤ 200.
+            function buildRubro() {
+                const administra = clean(form.elements['administra'].value);
+                const cantidad = clean(form.elements['cantidad'].value);
+                const body = [
+                    administra ? 'Administra: ' + administra : '',
+                    cantidad ? 'Propiedades o unidades (aprox.): ' + cantidad : ''
+                ].filter(Boolean).join(' · ');
+                return clip(body ? prefix + ' ' + body : prefix, MAX_RUBRO);
+            }
+
+            function setInvalid(wrapId, inputId, invalid) {
+                const wrap = document.getElementById(wrapId);
+                if (wrap) wrap.classList.toggle('invalid', invalid);
+                const input = document.getElementById(inputId);
+                if (!input) return;
+                input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+                // El mensaje de error solo describe al campo mientras está visible.
+                if (invalid) input.setAttribute('aria-describedby', 'e-' + inputId.slice(2));
+                else input.removeAttribute('aria-describedby');
+            }
+            function clearErrors() {
+                setInvalid('f-empresa', 'd-empresa', false);
+                setInvalid('f-nombre', 'd-nombre', false);
+                setInvalid('f-email', 'd-email', false);
+                setInvalid('f-cantidad', 'd-cantidad', false);
+            }
+            function showStatus(kind, html) {
+                statusBox.className = 'diag-status show ' + kind;
+                statusBox.innerHTML = html;
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (sending) return;
+                clearErrors();
+
+                const empresa = form.elements['empresa'].value.trim();
+                const nombre = form.elements['nombre'].value.trim();
+                const email = form.elements['email'].value.trim();
+                const cantidad = form.elements['cantidad'].value.trim();
+                const telefono = form.elements['telefono'].value.trim();
+                const ciudad = form.elements['ciudad'].value.trim();
+                const confirmEmail = form.elements['confirmEmail'].value; // honeypot
+
+                // Validación cliente
+                let firstBad = null;
+                if (!nombre) { setInvalid('f-nombre', 'd-nombre', true); firstBad = firstBad || 'd-nombre'; }
+                if (!email || !emailRe.test(email)) { setInvalid('f-email', 'd-email', true); firstBad = firstBad || 'd-email'; }
+                if (!empresa) { setInvalid('f-empresa', 'd-empresa', true); firstBad = firstBad || 'd-empresa'; }
+                if (cantidad && (!cantidadRe.test(cantidad) || Number(cantidad) < 1)) { setInvalid('f-cantidad', 'd-cantidad', true); firstBad = firstBad || 'd-cantidad'; }
+                if (firstBad) {
+                    statusBox.className = 'diag-status';
+                    const el = document.getElementById(firstBad);
+                    if (el) el.focus();
+                    return;
+                }
+
+                // Bot: honeypot lleno → simular éxito, no enviar
+                if (confirmEmail) {
+                    showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Recibimos tu solicitud. Te contactaremos para coordinar la demo.');
+                    form.reset();
+                    return;
+                }
+
+                const payload = { empresa: empresa, nombre: nombre, email: email, rubro: buildRubro(), confirmEmail: confirmEmail };
+                if (telefono) payload.telefono = telefono;
+                if (ciudad) payload.ciudad = ciudad;
+
+                sending = true;
+                submitBtn.setAttribute('aria-busy', 'true');
+                const originalLabel = submitBtn.textContent;
+                submitBtn.textContent = 'Enviando…';
+                statusBox.className = 'diag-status';
+
+                try {
+                    const res = await fetch(ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (res.ok) {
+                        showStatus('success', '<span class="diag-status-title">¡Gracias!</span>Recibimos tu solicitud. Te contactaremos para coordinar la demo.');
+                        form.reset();
+                    } else if (res.status === 429) {
+                        showStatus('error', '<span class="diag-status-title">Recibimos muchas solicitudes</span>Espera un momento y vuelve a intentar. Si es urgente, escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a>.');
+                    } else {
+                        showStatus('error', '<span class="diag-status-title">No pudimos enviar tu solicitud</span>Revisa los datos e intenta de nuevo, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                    }
+                } catch (err) {
+                    showStatus('error', '<span class="diag-status-title">Hubo un problema de conexión</span>Inténtalo nuevamente en unos minutos, o escríbenos a <a href="mailto:admin@sinapsis.in">admin@sinapsis.in</a> o por <a href="https://wa.me/56996807517" target="_blank" rel="noopener">WhatsApp</a>.');
+                } finally {
+                    sending = false;
+                    submitBtn.removeAttribute('aria-busy');
+                    submitBtn.textContent = originalLabel;
+                }
+            });
+        })();
+    </script>
+
+    <script defer src="/assets/js/chat-widget.js"></script>
+    <script defer src="/assets/js/pwa.js"></script>
+
+</body>
+</html>
