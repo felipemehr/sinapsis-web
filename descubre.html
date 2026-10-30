@@ -313,6 +313,34 @@
                 }
             });
         });
+
+        // ── Traspaso de UTM entrantes al enlace del diagnóstico ──
+        // Si el visitante llegó a esta página con utm_* propios (p. ej.
+        // desde un aviso), se pasan al enlace de www.humanos.eco/descubre
+        // en lugar de los fijos. Cada parámetro se reemplaza solo si viene
+        // en la URL actual; sin UTM entrantes el enlace queda tal cual.
+        // Sin cookies ni almacenamiento: solo se reescribe el href.
+        (() => {
+            const KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+            let params;
+            try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+            const incoming = {};
+            let any = false;
+            for (const k of KEYS) {
+                const v = (params.get(k) || '').trim();
+                if (v) { incoming[k] = v; any = true; }
+            }
+            if (!any) return;
+            document.querySelectorAll('a[href]').forEach((a) => {
+                let url;
+                try { url = new URL(a.href); } catch (e) { return; }
+                if (url.hostname !== 'www.humanos.eco' || url.pathname.replace(/\/+$/, '') !== '/descubre') return;
+                for (const k of KEYS) {
+                    if (incoming[k]) url.searchParams.set(k, incoming[k]);
+                }
+                a.href = url.href;
+            });
+        })();
     </script>
 
     <script defer src="/assets/js/chat-widget.js"></script>
