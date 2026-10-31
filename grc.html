@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HumanOS GRC — Control que se puede demostrar | Sinapsis SpA</title>
-    <meta name="description" content="Para contraloría, auditoría interna y cumplimiento: de la norma al control, con evidencia sellada y hallazgos con historia. Agenda una demo de 15 minutos.">
+    <meta name="description" content="Para contraloría, auditoría interna y cumplimiento: de la norma al control, con evidencia sellada y hallazgos con historia. Solicita tu demo de 15 minutos.">
     <meta name="theme-color" content="#FFFFFF">
     <link rel="canonical" href="https://sinapsis.in/grc">
 
@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sinapsis SpA">
     <meta property="og:title" content="HumanOS GRC — Control que se puede demostrar">
-    <meta property="og:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Agenda una demo de 15 minutos.">
+    <meta property="og:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Solicita tu demo de 15 minutos.">
     <meta property="og:url" content="https://sinapsis.in/grc">
     <meta property="og:image" content="https://sinapsis.in/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta property="og:locale" content="es_CL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HumanOS GRC — Control que se puede demostrar">
-    <meta name="twitter:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Agenda una demo de 15 minutos.">
+    <meta name="twitter:description" content="Norma, obligación, control con responsable, evidencia sellada y hallazgo con historia. Solicita tu demo de 15 minutos.">
     <meta name="twitter:image" content="https://sinapsis.in/assets/img/og-image.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
@@ -66,7 +66,7 @@
             <li><a href="/#confianza">Cumplimiento</a></li>
             <li><a href="/descubre">Descubre</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-            <li><a href="#demo" class="nav-cta">Agenda una demo</a></li>
+            <li><a href="#demo" class="nav-cta">Solicita una demo</a></li>
             <li class="lang-switch"><span class="lang-active">ES</span> <span class="lang-sep">|</span> <a href="/en/">EN</a></li>
         </ul>
     </nav>
@@ -84,7 +84,7 @@
                 control y un responsable con nombre, y cada control con la evidencia que lo respalda.
             </p>
             <div class="hero-buttons">
-                <a href="#demo" class="btn btn-primary">Agenda una demo de 15 minutos</a>
+                <a href="#demo" class="btn btn-primary">Solicita tu demo de 15 minutos</a>
                 <a href="#como-funciona" class="btn btn-outline">Cómo funciona</a>
             </div>
             <p class="hero-note">Para contralorías, auditoría interna y equipos de cumplimiento de universidades, instituciones públicas y empresas reguladas.</p>
@@ -220,9 +220,9 @@
             <div class="diag-grid">
                 <div class="diag-intro reveal">
                     <span class="section-label green">Demo</span>
-                    <h2 class="section-title" id="demo-title">Agenda una demo<br>de 15 minutos</h2>
+                    <h2 class="section-title" id="demo-title">Solicita tu demo<br>de 15 minutos</h2>
                     <p class="section-subtitle" style="max-width: 480px;">
-                        Déjanos tus datos y cuéntanos qué te gustaría ver. Te contactamos para coordinar la demo.
+                        Déjanos tus datos y cuéntanos qué te gustaría ver. Coordinamos la hora contigo por correo en un día hábil.
                     </p>
                     <ul class="diag-perks">
                         <li>Una conversación de <strong>15 minutos</strong>.</li>
@@ -290,7 +290,7 @@
                         <p class="diag-req-note"><span aria-hidden="true">*</span> Campos obligatorios.</p>
 
                         <button type="submit" class="btn btn-primary diag-submit" id="demoSubmit">
-                            Agenda mi demo de 15 minutos
+                            Solicita tu demo de 15 minutos
                         </button>
                         <p class="diag-consent">
                             Al enviar aceptas que te contactemos para coordinar la demo. Tratamos tus datos según nuestra
@@ -399,7 +399,7 @@
             });
         });
 
-        // ── Formulario «Agenda una demo de 15 minutos» ───────────────────────
+        // ── Formulario «Solicita tu demo de 15 minutos» ─────────────────────
         // Mismo endpoint, honeypot y manejo de errores que el formulario de
         // diagnóstico de la portada. El endpoint no tiene campo de campaña: el
         // origen viaja dentro de `rubro` como "[GRC · fuente/medio/campaña] …"
@@ -431,6 +431,21 @@
             function utmValue(params, key) {
                 const raw = params.get(key) || '';
                 return clip(raw.replace(/[^\w.+\- ]/g, '').trim(), 24);
+            }
+
+            // Atribucion estructurada (HumanOS la sanea con lista blanca y la
+            // lleva al deal del CRM): solo utm_* y la ruta, nunca el query entero.
+            function atribucionCruda() {
+                const out = {};
+                try {
+                    const params = new URLSearchParams(window.location.search);
+                    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+                        const v = params.get(k);
+                        if (v) out[k] = v.slice(0, 300);
+                    });
+                    out.landing_path = window.location.pathname.slice(0, 300);
+                } catch (err) { /* sin atribucion */ }
+                return out;
             }
 
             function origen() {
@@ -521,6 +536,7 @@
                 }
 
                 const payload = { empresa: empresa, nombre: nombre, email: email, rubro: buildRubro(), confirmEmail: confirmEmail };
+                payload.atribucion = atribucionCruda();
                 if (telefono) payload.telefono = telefono;
                 if (ciudad) payload.ciudad = ciudad;
 
