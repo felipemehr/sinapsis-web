@@ -692,6 +692,19 @@
                 }
 
                 const payload = { empresa, sitioWeb, nombre, email, rubro, confirmEmail };
+                // Atribucion estructurada: solo utm_* y la ruta (HumanOS la sanea y la lleva al CRM).
+                payload.atribucion = (function () {
+                    const out = {};
+                    try {
+                        const params = new URLSearchParams(window.location.search);
+                        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+                            const v = params.get(k);
+                            if (v) out[k] = v.slice(0, 300);
+                        });
+                        out.landing_path = window.location.pathname.slice(0, 300);
+                    } catch (err) { /* sin atribucion */ }
+                    return out;
+                })();
 
                 submitBtn.setAttribute('aria-busy', 'true');
                 const originalLabel = submitBtn.textContent;

@@ -432,6 +432,21 @@
                 return clip(raw.replace(/[^\w.+\- ]/g, '').trim(), 24);
             }
 
+            // Atribucion estructurada (HumanOS la sanea con lista blanca y la
+            // lleva al deal del CRM): solo utm_* y la ruta, nunca el query entero.
+            function atribucionCruda() {
+                const out = {};
+                try {
+                    const params = new URLSearchParams(window.location.search);
+                    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+                        const v = params.get(k);
+                        if (v) out[k] = v.slice(0, 300);
+                    });
+                    out.landing_path = window.location.pathname.slice(0, 300);
+                } catch (err) { /* sin atribucion */ }
+                return out;
+            }
+
             function origen() {
                 let params;
                 try { params = new URLSearchParams(window.location.search); }
@@ -509,6 +524,7 @@
                 }
 
                 const payload = { empresa: empresa, nombre: nombre, email: email, rubro: buildRubro(), confirmEmail: confirmEmail };
+                payload.atribucion = atribucionCruda();
                 if (telefono) payload.telefono = telefono;
                 if (ciudad) payload.ciudad = ciudad;
 
